@@ -1,0 +1,148 @@
+gb_creation_wall_homepage:
+    pattern:  /
+    defaults: { _controller: GbCreationWallBundle:Wall:index }
+    requirements:
+        _method:  GET
+
+gb_creation_wall_search_item:
+    pattern:  /
+    defaults: { _controller: GbCreationWallBundle:Wall:search }
+    requirements:
+        _method:  POST
+
+gb_creation_wall__show:
+    pattern:  /{id}
+    defaults: { _controller: GbCreationWallBundle:Wall:show }
+    requirements:
+        _method:  GET
+        id: \d+
+
+gb_creation_comment__create:
+    pattern:  /comment/{item_id}
+    defaults: { _controller: GbCreationWallBundle:Comment:create }
+    requirements:
+        _method:  POST
+        item_id: \d+
+
+gb_creation_rss_feed:
+    pattern:  /rss
+    defaults: { _controller: GbCreationWallBundle:Rss:feed }
+    requirements:
+        _method:  GET
+
+gb_creation_rss_item:
+    pattern:  /rss/items
+    defaults: { _controller: GbCreationWallBundle:Rss:item }
+    requirements:
+        _method:  GET
+
+gb_creation_rss_comment:
+    pattern:  /rss/comments
+    defaults: { _controller: GbCreationWallBundle:Rss:comment }
+    requirements:
+        _method:  GET
+
+gb_creation_admin__index:
+    pattern:  /admin/
+    defaults: { _controller: GbCreationWallBundle:Admin:add }
+    requirements:
+        _method:  GET
+
+gb_creation_admin__add:
+    pattern:  /admin/add/
+    defaults: { _controller: GbCreationWallBundle:Admin:add }
+    requirements:
+        _method:  GET
+
+gb_creation_admin_items_show:
+    pattern:  /admin/items/{page}
+    defaults: { _controller: GbCreationWallBundle:Admin:items, page: 1 }
+    requirements:
+        _method:  GET
+        page: \d+
+
+gb_creation_admin_items_show_noPagination:
+    pattern:  /admin/items/
+    defaults: { _controller: GbCreationWallBundle:Admin:allItems }
+    requirements:
+        _method:  GET
+        page: \d+
+
+gb_creation_admin_items_video_show:
+    pattern:  /admin/items/video/{page}
+    defaults: { _controller: GbCreationWallBundle:Admin:videoItems, page: 1 }
+    requirements:
+        _method:  GET
+        page: \d+
+
+gb_creation_admin_items_video_show_noPagination:
+    pattern:  /admin/items/video/
+    defaults: { _controller: GbCreationWallBundle:Admin:allVideoItems }
+    requirements:
+        _method:  GET
+        page: \d+
+
+gb_creation_admin_item_create:
+    pattern:  /admin/item/create/
+    defaults: { _controller: GbCreationWallBundle:Admin:createItem }
+    requirements:
+        _method:  POST
+
+gb_creation_admin_item_video_create:
+    pattern:  /admin/item/create/video/
+    defaults: { _controller: GbCreationWallBundle:Admin:createVideoItem }
+    requirements:
+        _method:  POST
+
+gb_creation_admin_item_edit:
+    pattern:  /admin/item/edit/{id}
+    defaults: { _controller: GbCreationWallBundle:Admin:editItem }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+gb_creation_admin_item_video_edit:
+    pattern:  /admin/item/edit/video/{id}
+    defaults: { _controller: GbCreationWallBundle:Admin:editVideoItem }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+gb_creation_admin_item_delete:
+    pattern:  /admin/item/delete/{id}
+    defaults: { _controller: GbCreationWallBundle:Admin:deleteItem }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+gb_creation_admin_comments_show:
+    pattern:  /admin/comments/{page}
+    defaults: { _controller: GbCreationWallBundle:Admin:comments, page: 1 }
+    requirements:
+        _method:  GET
+
+gb_creation_admin_comments_show_noPagination:
+    pattern:  /admin/comments/
+    defaults: { _controller: GbCreationWallBundle:Admin:allComments}
+    requirements:
+        _method:  GET
+
+gb_creation_admin_comment_edit:
+    pattern:  /admin/comments/edit/{id}
+    defaults: { _controller: GbCreationWallBundle:Admin:editComment }
+    requirements:
+        _method:  GET|POST
+        id: \d+
+
+gb_creation_admin_comment_delete:
+    pattern:  /admin/comments/delete/{id}
+    defaults: { _controller: GbCreationWallBundle:Admin:deleteComment }
+    requirements:
+        _method:  GET
+        id: \d+
+
+gb_creation_admin_stats:
+    pattern:  /admin/stats
+    defaults: { _controller: GbCreationWallBundle:Admin:stats }
+    requirements:
+        _method:  GET

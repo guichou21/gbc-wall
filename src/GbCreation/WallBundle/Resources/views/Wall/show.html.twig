@@ -1,0 +1,53 @@
+{% extends 'GbCreationWallBundle::layout.html.twig' %}
+
+{% block title %}{{ item.description }}{% endblock %}
+
+
+
+{% block body %}
+
+    <div class="row-fluid">
+      <div class="span9 pictureBar">
+        {% if item.type=="Video" %}
+        <div class="js-video widescreen">
+          <iframe src="{{ item.file }}" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        {% else %}
+          <img src="{{ asset(['images/wall/', item.file]|join) }}" alt="{{ item.file }} n'a pas été trouvée" class="large" />
+        {% endif %}
+
+      </div>
+      
+      <div class="span3 commentBar" style="min-height: 712px;">
+          <section class="row-fluid">
+              <h3>Ajouter un commentaire</h3>
+              <div class="span11 commentForm">
+                  {{ render(controller( 'GbCreationWallBundle:Comment:new', { 'item_id': item.id } )) }}
+              </div>
+          </section>
+          <section class="row-fluid ">
+              <h3>Commentaires  ({{ item.nbLike }})</h3>
+              <div class="span11 comments">
+                    {% include 'GbCreationWallBundle:Comment:index.html.twig' with { 'comments': comments } %}
+              </div>
+          </section>
+
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block javascripts %} 
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('.btn-navbar').remove();
+      $('.nav-collapse').remove();
+
+      var description = '<a  class="brand" href="{{ path('gb_creation_wall_homepage') }}">Wall</a> <span id="itemDescription">Le <span class="date">{{ item.date|localizeddate("long", "none") }}</span> : &ldquo;<span class="description">{{ item.description }}&rdquo;</span></span>';
+
+      $('.myBrand').after(description);
+  });
+ </script>
+{% endblock %}

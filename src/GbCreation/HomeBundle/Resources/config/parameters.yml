@@ -1,0 +1,12 @@
+parameters:
+    param:
+        NB_SLIDE: 3
+        MAX_COMMENT: 10
+        MAX_ITEM: 10
+    Contact:
+        EMAIL_WEBSITE_CONTACT: karen.guillaume.b@gmail.com
+    rssFeeds:
+        RSS_VIDEO_NB_ITEM: 10
+        RSS_VIDEO_FEED: 'http://vimeo.com/user3746792/videos/rss'
+        RSS_BLOG_NB_ITEM: 10
+        RSS_BLOG_FEED: 'http://guichou21.wordpress.com/feed/'

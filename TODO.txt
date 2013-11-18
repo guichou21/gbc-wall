@@ -1,0 +1,147 @@
+Firefox : tester responsive : ctrl maj M
+-------------------
+- Evols  &   Bugs -
+-------------------
+* Readme : procédure install à terminer (générer base, ) !!!
+* Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
+* faire tourner sur travis! pour voir
+------------------------------------------------------------------------
+* Filtre Photo / Vidéo / Année
+* form contact  prametrer envoi mail
+* composer.phar a mettre en place
+* Puis supprimer FosUSerBundle et réimporter tout avec composer : http://rkueny.fr/developpement-web/integrer-facilement-facebook-connect-et-twitter-connect-avec-fosuserbundle-pour-symfony-2-1
+* durée session
+* Créer une fenetre de config appli qui ecris un fichier de propriété relatif a l'application contenant. plus un raz par defaut :
+   - lien rss vimeo:youtube:wordpress:...
+   - Nom blog / parties spécifiques à paramétrer
+   - paramétrage : réseaux sociaux actif ou non (permet le share fb, twitter,..)
+   - [RSS]nbItem de rss.twig a récupérer
+   - [RSS] Nom blog et infos a récuéprer ou afficher
+* Slug
+* réecrire et adapter le fichier param.yml http://www.squareeyes.fr/actualite/jouer-avec-les-variables-globales-dans-symfony-2
+* Sonata Admin
+* Mise en place droits admin -> msg d'erreurs a gérer / création compte / profile / + design formulaires
++ pb login différent de register et autres (appel pas layout) => supprimer : Controler - view - routing?
+* JSON
+* Définir vos formulaire en tant que services (cf doc sy2=> Form!)
+------------------------------------------------------------------------
+* dropzone en jquery
+* upload photo : récupérer date dans le mime type? du fichier
+* afficher photo sur survol (partie admin item ou com)
+* admin proposer voir commentaires lors suppression item et gestion commentaires (supr un a un / tous / rien)
+* mettre em au lieu px avec http://pxtoem.com/
+
+
+Boite à idées
+--------------
+* ?? retour arrière scroll infini http://gafish.fr/scroll-continu-et-retour-arriere-en-jquery/
+* ?? Infinite Scroll a refaire avec masonry http://desandro.github.io/masonry/demos/infinite-scroll.html
+* service pour envoi mail contact  http://www.siteduzero.com/informatique/tutoriels/developpez-vos-applications-web-avec-symfony2/l-apprentissage-par-l-exemple
+* Pagination sur comments postés?
+* recuperer les images des vidéos (peut etre pdt l'import?) http://www.memorandom.fr/divers/image-miniature-de-videos-youtube-ou-dailymotion/
+* page d'accueil "tout a été affiché" pas centré verticalement
+* ?? Progress bar
+* Tests
+* Designer le form de edition
+* Designer le form de add
+* jquery slider responsive http://bxslider.com/
+http://docs.dev7studios.com/jquery-plugins/nivo-slider
+
+---------
+-- MEP --
+---------
+http://www.symfony2-checklist.com/fr
+
+
+------------
+--- Done ---
+------------
+[done] ajax requete pour afficher photo site
+[done] js scroll infiny rafraichi fenetre !
+[done] NbCom et nb Photos affichées ds entete : Twig : utiliser render au lieu include qui va appele un contoller.
+[done] rss photo et commentaire
+[done] upload seul caractères alphanumériques et extensions dans properties
+[done] gitignore mis en place 
+[done] upload créer une photo m_ et mettre la width ou la height a 640.
+[done] page erreur customisées
+[done] css, js mis dans dossier public du bundle.  Sauf bootsrap et qq plugin  (choix plutot que mettre ds wall)  Template twig  et css normal dans web mais NORMAL. 
+[done] wall responsive design !
+[done] Pagination sur item et Commentaires
+[done] [Admin] ajout : deux possibilités -> form vidéo ou form photo dans onglet
+[done] ajout de vidéo et affichage de vidéo ds wall
+[done] console bundle pour la prod :  http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2/pratique-utiliser-un-consolebundle
+[done] mise en place imageLoaded pour reorganiser wall lorsque image chargee
+[done] iframe responsive design https://github.com/jonsuh/Responsive-YouTube-Vimeo-Embed-and-HTML5-Videos-with-CSS
+[done] image existe deja - renommer en mettant un -2 par ex
+
+------------------
+- Tutos & autres -
+------------------
+!!!!!!!!!!!!!!!!!!!!!!!!!! A Nettoyer !!!!!!!!!!!!!!!!!!!!!!
+Lire RSS en jquery
+http://www.noprobweb.com/rss_feed_flux_jquery.php?lang=fr
+http://codeforbrowser.com/blog/parse-an-rss-feed-with-jquery/
+http://www.svlada.com/blog/2012/06/11/proxy-ajax-requests-curl-and-symfony-2/
+
+http://blog.neilpeyssard.fr/2013/01/30/creer-un-service-email-symfony/
+
+tuto complet
+http://www.jobeet.thuau.fr/les-tests-unitaires
+
+Mise en place user admin
+http://iabsis.com/FR/article/21-10/Mise-en-place-de-l-authentification
+
+
+Bundle upload file
+https://github.com/punkave/symfony2-file-uploader-bundle
+
+
+Ajax traduction
+!!  http://j-place.developpez.com/tutoriels/php/ameliorez-vos-applications-developpees-avec-symfony2/
+
+Upload ajax file    Tuto
+http://net.tutsplus.com/tutorials/javascript-ajax/uploading-files-with-ajax/
+a voir http://www.siteduzero.com/forum/sujet/symfony2-upload-file-21967
+
+http://www.jquery4u.com/
+
+System notif
+http://appventus.com/blog/les-notifications-ou-comment-ameliorer-la-user-experience-grace-a-noty-et-aux-modals-en-2-minutes
+
+redimensionner a upload
+http://www.siteduzero.com/forum/sujet/symfony2-redimensionner-une-image-a-l-upload-44969
+
+sources sdz
+https://github.com/winzou/SdzBlog
+
+
+http://www.tutoriel-symfony2.fr/
+Serialisation : http://symfony.com/fr/doc/current/components/serializer.html
+Commandes Sy2 (notament mise en prod)
+http://blog.keiruaprod.fr/2012/03/21/bien-utiliser-les-commandes-console-de-symfony2/
+
+drag and drop
+http://www.thebuzzmedia.com/html5-drag-and-drop-and-file-api-tutorial/
+http://html5demos.com/drag-anything
+http://html5demos.com/dnd-upload
+http://html5demos.com/
+
+
+
+
+$logger = $this->get('logger');
+$logger->info('Nous avons récupéré le logger');
+
+SUPER
+console dans app_dev
+http://fr.openclassrooms.com/informatique/cours/developpez-votre-site-web-avec-le-framework-symfony2/pratique-utiliser-un-consolebundle
+
+
+livraison nas 
+créer prod et dev a la main sur finder (droits du user du nas)
+
+app/console cache:clear
+app/console cache:clear --env=prod
+
+app/console assets:install web
+app/console assets:install web --env=prod

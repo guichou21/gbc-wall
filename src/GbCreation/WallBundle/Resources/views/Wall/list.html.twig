@@ -1,0 +1,27 @@
+
+        {% for item in items %}
+            <!-- <article id="{{ item.id }}" class="item span4">-->
+            <article id="{{ item.id }}" class="myItem">
+                <header>
+                </header>
+                <a href="{{ path('gb_creation_wall__show', { 'id': item.id }) }}">
+                 {% if item.type=="Video" %}
+                   <img src="{{ asset('resources/img/img_video3.jpg') }}">
+                {% else %}
+                  <img src="{{ asset(['images/wall/m_', item.file]|join) }}" />
+                {% endif %}                    
+                </a>
+                    <span class="date"><time datetime="{{ item.date|date('c') }}">{{ item.date|date('d/m/Y') }}</time></span>
+                    <span class="description">{{ item.description }}</span>
+                    <span class="nb-comments">{{ item.nbLike }} <i class="icon-comment icon-white"></i></span>
+                <!--<footer class="meta">
+                    <p>Comments: todo</p>
+                    <h4>tags : {{ item.tags }}</h4>
+                    <h4> il y a {{ item.nbLike }} likes</h4>
+                    <h4>ceci est type : {{ item.type }}</h4>     
+                </footer>-->
+            </article>
+        {% else %}
+            <!-- <p>Il n'y a pas de photos dans le mur</p> -->
+        {% endfor %}
+        

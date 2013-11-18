@@ -1,0 +1,372 @@
+@font-face {
+  font-family: 'La Belle Aurore';
+  font-style: normal;
+  font-weight: 400;
+  src: local('La Belle Aurore'), local('LaBelleAurore'), url('fonts/LaBelleAurore.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Irish Grover'), local('IrishGrover'), url('fonts/IrishGrover.woff') format('woff');
+}
+@font-face {
+  font-family: 'Simonetta';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Simonetta'), local('Simonetta-Regular'), url('fonts/Simonetta.woff') format('woff');
+}
+
+
+
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	background-image: url("../img/bg.png");
+    font-family: 'Simonetta', Arial, Helvetica, sans-serif;
+    color: #000000;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+     font-family: 'Irish Grover',cursive, Arial, Helvetica, sans-serif ;
+     color: #0193A3;
+}
+
+.errorImg{
+    max-width:250px;
+}
+
+.errorMsg{
+     background-image: none;
+}
+
+.myBrand{
+    font-family: 'Irish Grover',cursive;
+    font-weight: 300;
+    color: #266BB2 !important;
+}
+
+/*********************************/
+/* Menu / bandeau haut du site   */
+/*********************************/
+#resume{
+    display:inline-block;
+    line-height: 20px;
+    color: #777777;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #FFFFFF;
+    margin-left: 50px;
+}
+
+#resume .nb_item, #resume .nb_comments{
+    color:#777777;
+    font-weight: bold;
+}
+
+
+#itemDescription{
+    font-size: large;
+    line-height: 40px;
+    margin: 0;
+}
+#itemDescription .date{
+    font-style: italic;
+}
+
+#itemDescription .description{
+    color: #266BB2 !important;
+    font-family: 'Irish Grover',cursive;
+    /*font-weight: bold;*/
+}
+
+
+/* partie affichage d'une photo*/
+.pictureBar img{
+    cursor: pointer;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067)
+}
+.commentBar{
+    background-color: #FAFAFA;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    background-repeat: repeat-x;
+    border: 1px solid #D4D4D4;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+.commentBar h3{
+    font-size: 1.3em;
+    text-align: center;
+    margin: 0 auto;
+    /*font-family: 'La Belle Aurore',cursive;*/
+
+}
+
+.comments{
+    text-align: left;
+    padding: 6px;
+    text-align: left;
+}
+.comment{
+    border: 1px solid #D4D4D4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    border-radius: 4px 4px 4px 4px;
+    width:100%;
+    margin: 0 auto 10px;
+    overflow: hidden;
+
+}
+.comment .author{
+    margin-left: 2px;
+    color:#777777;
+    border-bottom: 2px solid #777777;
+    font-size: large;
+    font-weight: bold;
+    width: 100%;
+}
+
+.comment .date {
+    float: right;
+    font-size: x-small;
+    font-weight: normal;
+    line-height: 15px;
+    padding-bottom: 10px;
+}
+
+.comment p{
+    margin-left: 5px;
+    padding-top:5px;
+}
+.comments .odd{
+
+}
+.comments .even{
+
+}
+
+.videoDisplay{
+   margin: 0 auto;
+   width:500px;
+   height:281px;
+}
+
+.rssFeed{
+    height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+    margin-left:10px;
+}
+
+
+/*********************************/
+/* Footer                        */
+/*********************************/
+#footer {
+    /*border-top: 1px solid #CCCCCC;*/
+    clear: both;
+    color: #AAAAAA;
+    padding: 10px;
+    text-align: center;
+}
+
+#footer h3 {
+    color: #266BB2;
+    font-family: 'La Belle Aurore',cursive;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/*********************************/
+/* Grille Affichage Accueil      */
+/*********************************/
+.grid{
+    margin:0 auto;
+}
+
+.myItem{
+     width: 31%;
+     /*min-width: 300px;*/
+     float:left;
+     margin: 10px;
+}
+
+.column .myItem img {
+    box-shadow: 1px 1px 5px #999999;
+}
+
+.column .myItem img, .column .myItem video {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+/* marche pas?
+.column .item img, .column .item video, .picture img {
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
+
+    -webkit-transition: width 1s ease, height 1s ease;
+    -moz-transition: width 1s ease, height 1s ease;
+    -o-transition: width 1s ease, height 1s ease;
+    -ms-transition: width 1s ease, height 1s ease;
+    transition: width 1s ease, height 1s ease;
+}*/
+
+.column .myItem img:hover, .column .myItem video:hover {
+    -moz-box-shadow: 2px 2px 6px #FFFFBC;
+    -webkit-box-shadow: 2px 2px 6px #FFFFBC;
+    box-shadow: 2px 2px 6px #FFFFBC;
+}
+
+img {
+    border: 0 none;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.column .myItem .date, .column .myItem .description, .column .myItem .nb-comments {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    color: #FFFFFF;
+    font-size: large;
+    margin: 0;
+    padding: 4px 0;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: 100%;
+}
+
+.column .myItem:hover .date, .column .myItem:hover .description, .column .myItem:hover .nb-comments {
+    visibility: visible;
+}
+
+.column .myItem .date {
+    bottom: auto;
+    font-size: medium;
+    left: 0;
+    padding: 4px 5px;
+    text-align: center;
+    top: 0;
+    width: auto;
+    z-index: 2;
+}
+
+.column .myItem .nb-comments {
+    background-position: right;
+    background-repeat: no-repeat;
+    bottom: auto;
+    font-size: medium;
+    padding: 4px 20px 4px 5px;
+    right: 0;
+    top: 0;
+    width: auto;
+    z-index: 2;
+}
+
+.loading{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    font-size: large;
+    display: block;
+    text-align:center;
+    vertical-align: middle;
+    border: 0 none;
+    color: #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.8;
+}
+
+.noMore{
+    background: none repeat scroll 0 0 #7f7f7f;
+    bottom: 0;
+    font-size: large;
+    display: block;
+    text-align:center;
+    vertical-align: middle;
+    border: 0 none;
+    color: #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    opacity: 0.8;
+    height:50px;
+}
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+    body {
+    padding-top: 60px;
+  }
+ .myItem{
+     width: 31%;
+    }
+}
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+    body {
+    padding-top: 0px;
+  }
+    .myItem{
+     width: 31%;
+    }
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+    body {
+    padding-top: 0px;
+  }
+    .myItem{
+     width: 31%;
+    margin: 8px;
+    }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+    body {
+    padding-top: 0px;
+  }
+   .myItem{
+     width: 47%;
+     margin: 6px;
+    }
+    .hidden-wall {
+    display: none !important;
+  }
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+  body {
+    padding-top: 0px;
+  }
+   .myItem{
+     width: 95%;
+    }
+    .hidden-wall {
+    display: none !important;
+  }
+}
+
+
+/*
+.column .item span {
+    visibility: hidden;
+}
+ 
+.column .item img:hover + span {
+    visibility: visible;
+}*/

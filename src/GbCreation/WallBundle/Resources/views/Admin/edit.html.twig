@@ -1,0 +1,37 @@
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+     <section id="edit">
+      <div class="page-header">
+        <h1>Modification</h1>
+      </div>
+          {% if itemType =="Video" %}
+          {% include 'GbCreationWallBundle:Item:editVideo.form.html.twig' with { 'form': form, 'item_id': item_id } %}
+        {% else %}
+          {% include 'GbCreationWallBundle:Item:edit.form.html.twig' with { 'form': form, 'item_id': item_id  } %}
+        {% endif %}
+
+    </section>
+
+{% endblock %}
+
+
+
+{% block javascripts %} 
+<script src="{{ asset('resources/plugins/jquery-ui/1.10/minified/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('resources/plugins/jquery-ui/jquery-ui-timepicker-addon.js') }}"></script>
+<script src="{{ asset('resources/plugins/jquery-ui/jquery-ui-sliderAccess.js') }}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+	$('.datepicker').datetimepicker({
+		dateFormat: "dd/mm/yy",
+		timeFormat: "HH:mm"
+	});
+
+  } );
+
+</script>
+{% endblock %}

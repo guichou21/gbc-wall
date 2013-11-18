@@ -1,0 +1,206 @@
+{% extends 'GbCreationWallBundle::layout.html.twig' %}
+
+{% block body %}
+
+<div class="grid">
+    <div class="row-fluid">
+        <div id="column" class="column">
+            
+               {% include 'GbCreationWallBundle:Wall:list.html.twig' with {'items' : items}  %}
+
+        </div>
+    </div>
+</div>
+
+
+<div class="loading">
+    <img src="{{ asset('resources/img/ajax-loader.gif') }}" />
+    Chargement en cours...
+</div>
+<div class="noMore">
+    Tout a été affiché...
+</div>
+
+
+
+{% endblock %}
+
+{% block javascripts %} 
+<script src="{{ asset('resources/plugins/masonry/masonry.min.js') }}"></script>
+<script src="{{ asset('resources/plugins/masonry/imagesloaded.pkgd.min.js') }}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+        /*var hash = window.location.href;
+        hash = hash.replace(/^.*#/, '');
+        var hash2 = window.location.href.split('#')[1];
+        var hash3 = document.URL.split('#')[1];
+        alert(hash3);*/
+
+      var myhash = document.URL.split('#')[1];
+      if(myhash=='video'){
+        clickOnVideo();
+      }
+
+
+        var $container = $('#column');
+        var filter = 'all';
+
+        $(".loading").hide();
+        var load = false; // aucun chargement de commentaire n'est en cours
+        $(window).scroll(function(){ // On surveille l'évènement scroll
+
+            /* si aucun chargement n'est en cours, si tout les items ne sont pas affichés, alors on lance la fonction. */
+
+            if($(window).scrollTop()==$(document).height() - $(window).height() && load==false ){
+            /*  if(load==false ){  */
+                if(($('.myItem').size()!=$('.nb_item').text())){
+                    //On affiche un loader
+                    $('.loading').show();
+
+                    // la valeur passe à vrai, on va charger
+                    load = true;
+
+                    //On récupère le nb d'item affichés
+                    var nbItems = $('.myItem').length;
+
+                    //On lance la fonction ajax
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ path('gb_creation_wall_search_item')}}",
+                        data: 'last='+nbItems+'&filter='+filter,
+                        cache: false,
+                        success: function(data){
+                           $('.loading').fadeOut(500);
+                           $('.myItem:last').after(data);
+                            //On remet la valeur à faux car c'est fini
+                            load = false;
+                            //on reload les items
+                           $container.masonry('reloadItems');
+                           //on réaffiche les items
+                           $container.imagesLoaded( function() {
+                            $container.masonry({
+                                itemSelector: '.myItem',
+                                isAnimated: true,
+                                isFitWidth: true
+                            });
+                            //console.log('all images are loaded');
+                            });
+                         }
+                    });
+
+                }
+                else{
+                     $('.noMore').show();
+                }
+            }
+        });
+
+    $(".noMore").hide();
+    
+     $container.imagesLoaded( function() {
+        $container.masonry({
+                itemSelector: '.myItem',
+                isAnimated: true,
+                isFitWidth: true
+            });
+        });
+
+
+/******* Gestion filtres ***********/
+ $( "#rqtpicture" ).click(function() {      
+       clickOnPicture();
+      });
+
+      $( "#rqtvideo" ).click(function() {
+        clickOnVideo();
+      });
+
+
+function clickOnPicture(){
+   if($("#rqtpicture").attr('class') == 'active'){
+          cleanFilter();
+          $("#rqtpicture").attr("href", '');
+        }
+        else{
+          $("#rqtpicture").attr("href", '#picture');
+          if($("#rqtvideo").attr('class') == 'active'){
+            cleanVideoFilter();
+          }
+          filter = 'picture';
+          $("#rqtpicture > span").addClass('label-info');
+          $("#rqtpicture").addClass('active');
+          $(".dropdown ").addClass('active');
+        }        
+        //On lance la fonction ajax
+        ajaxFilterReload();
+}
+
+function clickOnVideo(){
+  if($("#rqtvideo").attr('class') == 'active'){
+         cleanFilter();
+         $("#rqtvideo").attr("href", '');
+        }
+        else{
+         $("#rqtvideo").attr("href", '#video');
+          if($("#rqtpicture").attr('class') == 'active'){
+             cleanPictureFilter();
+            }
+           filter = 'video';
+           $("#rqtvideo > span").addClass('label-info');
+           $("#rqtvideo").addClass('active');
+           $(".dropdown ").addClass('active');
+        }
+        //On lance la fonction ajax
+        ajaxFilterReload();        
+}
+
+function cleanFilter()
+{
+  filter = 'all';
+  cleanPictureFilter();
+  cleanVideoFilter();
+  //cleanDate
+}
+function cleanPictureFilter(){
+  $("#rqtpicture > span").removeClass('label-info');
+  $("#rqtpicture").removeClass('active');
+  $(".dropdown").removeClass('active');
+}
+function cleanVideoFilter(){
+  $("#rqtvideo > span").removeClass('label-info');
+  $("#rqtvideo").removeClass('active');
+  $(".dropdown").removeClass('active');
+}
+
+function ajaxFilterReload(){
+      $.ajax({
+        type: "POST",
+        url: "{{ path('gb_creation_wall_search_item')}}",
+        data: 'last='+0+',&filter='+filter,
+        cache: false,
+        success: function(data){
+           $('.loading').fadeOut(500);
+           $container.html(data);
+            //On remet la valeur à faux car c'est fini
+            load = false;
+            //on reload les items
+           $container.masonry('reloadItems');
+           //on réaffiche les items
+           $container.imagesLoaded( function() {
+            $container.masonry({
+                itemSelector: '.myItem',
+                isAnimated: true,
+                isFitWidth: true
+            });
+            //console.log('all images are loaded');
+            });
+         }
+    });
+}
+
+  } );
+
+</script>
+{% endblock %}

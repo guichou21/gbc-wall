@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Karen.Guiom &amp; Alice</title>
+        <link>{{app.request.scheme ~  '://' ~  app.request.host}}{{ path('gb_creation_rss_comment') }}</link>
+        <description>Derniers Commentaires</description>
+        <language>FR-fr</language>
+        <pubDate>{{"now"}}</pubDate>
+        <copyright>Copyright 2013 GBCreation</copyright>
+{% for comment in comments %}
+        <item>
+            <title>{{comment.author}}</title>
+            <link>{{app.request.scheme ~  '://' ~  app.request.host}}{{ path('gb_creation_wall_homepage') }}{{comment.idItem.id}}</link>
+            <pubDate>{{comment.created|date("D, d M Y H:i:s T")}}</pubDate>
+            <description>{{comment.comment}}</description>
+        </item>
+{% endfor %}
+    </channel>
+</rss>

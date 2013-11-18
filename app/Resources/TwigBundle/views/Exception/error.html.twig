@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="copyright" content="GbCreation">
+        <meta name="author" content="GbCreation">
+        <meta name="language" content="fr">
+        <meta http-equiv="content-language" content="fr">
+        
+        <title>Karen.Guiom - Erreur</title> 
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> 
+
+        {% block stylesheets %}
+		<link href="{{ asset('resources/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('resources/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">     
+        <link href="{{ asset('resources/css/sy2-wall-base.css') }}" rel="stylesheet">      
+        {% endblock %}
+    </head>
+
+    <body>
+		<div class="container-fluid errorMsg">
+			<div class="row-fluid">
+				<div class="span4 errorImg">
+					<img src="{{ asset('resources/img/erreur.png') }}">
+				</div>
+				<div class="span8">
+					<h2>Ooops : Une erreur s'est produite...</h2>
+					<!-- <p>Serveur a retourné {{ status_code }} - {{ status_text }}</p>-->
+					<a href="{{ path('gb_creation_home_homepage') }}">Retourner à l'accueil</a>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<footer  id="footer">
+			<p>
+			<img src="{{ asset('resources/img/GibeeCreationLogo.png') }}">
+			<h3>&copy; 2013 all rights reserved</h3>
+			</p>
+		</footer>
+	</body>
+</html>
+

@@ -1,0 +1,6 @@
+<form action="{{ path('gb_creation_comment__create', { 'item_id' : comment.idItem.id } ) }}" method="post" {{ form_enctype(form) }} class="formComment">
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>

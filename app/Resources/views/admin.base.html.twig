@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="copyright" content="GbCreation">
+        <meta name="author" content="GbCreation">
+        <meta name="language" content="fr">
+        <meta http-equiv="content-language" content="fr">
+        
+        <title>ADMIN | Karen.Guiom | {% block title %}WeSite!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> 
+
+        {% block stylesheets %}
+        <link href="{{ asset('resources/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('resources/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">     
+        <link href="{{ asset('resources/css/jquery-ui/jquery-ui.1.10.0.css') }}" rel="stylesheet">   
+        <link href="{{ asset('resources/css/sy2-admin.wall-base.css') }}" rel="stylesheet">     
+        <link href="{{ asset('resources/css/jquery-ui/jquery-ui-timepicker-addon.css') }}" rel="stylesheet"> 
+        {% endblock %}
+
+
+    </head>
+    <body >
+    <!-- /Menu -->
+     <div class="navbar navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="brand myBrand" href="{{ path('gb_creation_home_homepage') }}">Karen.Guiom</a>
+
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li ><a href="{{ path('gb_creation_wall_homepage') }}">Wall</a></li>
+                  <li class="active"><a href="{{ path('gb_creation_admin__index') }}">Admin</a></li>
+                </ul>
+                 <p class="navbar-text pull-right userName">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                       {{ app.user.username }} <a href="{{ path('fos_user_security_logout') }}" title="Se déconnecter"><i class="icon-off"></i></a>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}"><i class="icon-user"></i></a>
+                    {% endif %}
+                  </p>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+
+         <div class="row-fluid">
+            <div class="span3">
+              {% block sidebar %}{% endblock %} 
+            </div>
+             <div class="span9">
+              {% block body %}{% endblock %}
+            </div>
+          </div><!-- row -->
+
+        </div> <!-- /container -->
+
+
+      <hr>
+      <footer  id="footer">
+        <p>
+          <img src="{{ asset('resources/img/GibeeCreationLogo.png') }}">
+          <h3>&copy; 2013 all rights reserved</h3>
+        </p>
+      </footer>
+
+
+      <!-- Partie import javascript-->
+        <script src="{{ asset('resources/js/sy2-wall.js') }}"></script>
+        <script src="{{ asset('resources/bootstrap/js/jquery.js') }}"></script>
+        <script src="{{ asset('resources/bootstrap/js/bootstrap-affix.js') }}"></script>
+        <script src="{{ asset('resources/bootstrap/js/bootstrap-scrollspy.js') }}"></script>
+        <script src="{{ asset('resources/bootstrap/js/bootstrap-collapse.js') }}"></script>
+        <noscript>Votre navigateur ne supporte pas le javaScript</noscript>
+      {% block javascripts %}
+      
+      {% endblock %}
+
+    </body>
+</html>

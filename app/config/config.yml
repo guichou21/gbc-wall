@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -64,3 +64,36 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+services:
+    acme_hello.twig.extension.debug:
+        class:        Twig_Extension_Debug
+        tags:
+             - { name: 'twig.extension' }
+    twig.extension.intl:
+       class: Twig_Extensions_Extension_Intl
+       tags:
+           - { name: twig.extension }
+
+fos_user:
+    db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
+    firewall_name: main                       # Le nom du firewall derrière lequel on utilisera ces utilisateurs
+    user_class:    GbCreation\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
+    #Permet de définir quel service de mail utiliser
+    # On utilise twig_swift pour pouvoir envoyer un email en HTML
+#    service:
+#        mailer: fos_user.mailer.twig_swift
+#    # Permet de renseigner le nouveau formulaire d'inscription
+#    registration:
+#        form:
+#            type: fos_user_registration
+#        # Permet la validation automatique du compte par envoi d'un email
+#        confirmation:
+#            # Permet de définir le template de l'email à envoyer (en html)
+#            template: GbCreationUserBundle:Registration:registration.email.twig
+#            enabled:    false
+#            from_email:
+#                # Adresse de l'expediteur
+#                address:        admin@monsiteweb.com
+#                # Nom de l'expediteur
+#                sender_name:    Admin Karen.Guiom

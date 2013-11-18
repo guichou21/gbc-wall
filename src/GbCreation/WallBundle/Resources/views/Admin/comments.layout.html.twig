@@ -1,0 +1,106 @@
+
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+<section id="gallery">
+      <div class="page-header">
+        <h1>Liste des Commentaires</h1>
+      </div>
+
+{# {{ dump(app.session.flashbag.get('notice')) }} #}
+
+  {% for type in ['notice', 'info', 'success', 'error'] %}
+        {% for flashMessage in app.session.flashbag.get(type) %}
+            <div  id="alertMsg" class="alert alert-{{ type }}">
+              <button class="close" data-dismiss="alert" type="button">×</button>
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+
+      <table id="resultData" class="table table-striped tableSorter">
+         <thead>
+          <tr>
+            <th id="thId">Id</th>  
+            <th id="thIdItem">#</th>
+            <th id="thDate">Date</th>  
+            <th id="thAuthor">Auteur</th>  
+            <th id="thComment">Commentaires</th>
+            <th id="thApproved">Aprouvé</th>
+            <th id="thAction">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for commentaire in comments %}
+          <tr>
+            <td>{{ commentaire.id }}</td>
+            <td>{{ commentaire.idItem.id }} {#<span class="">{{ commentaire.idItem.description }}</span>#}</td>
+            <td>{{ commentaire.created|date('d/m/Y') }}</td>
+            <td>{{ commentaire.author }}</td>
+            <td>{{ commentaire.comment }}</td>
+            <td>{% if commentaire.isApproved == '1' %}oui{% else %}non{% endif %} </td>
+            <td>
+              <a href="{{ path('gb_creation_wall__show', { 'id': commentaire.idItem.id }) }}"><i class="icon-picture icon"></i></a>
+              - <a href="{{ path('gb_creation_admin_comment_edit', { 'id': commentaire.id }) }}"><i class="icon-pencil icon"></i></a>
+              - <a class="confirmModalLink" href="{{ path('gb_creation_admin_comment_delete', { 'id': commentaire.id }) }}" data-toggle="modal"><i class="icon-remove icon"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% block comment_pagination %} 
+
+{% endblock %}
+
+    </section>
+
+
+        <div id="event-modal" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Confirmation Suppression</h3>
+            </div>
+            <div class="modal-body">
+                <p>Etes-vous certain de vouloir supprimer ?</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" id="confirmModalNo">Non</a>
+              <a href="#" class="btn btn-primary" id="confirmModalYes">Oui</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block javascripts %} 
+ <script src="{{ asset('resources/bootstrap/js/bootstrap-modal.js') }}"></script>
+ <script src="{{ asset('resources/plugins/tableSorter/jquery.tablesorter.js') }}"></script>
+ <script type="text/javascript">
+  $(document).ready(function() {
+      $('#resultData').tablesorter(); 
+      $("#thAction").toggleClass('header ');
+
+       var theHREF; 
+      $(".confirmModalLink").click(function(e) {
+          e.preventDefault();
+          theHREF = $(this).attr("href");
+          $("#event-modal").modal("show");
+      });
+   
+      $("#confirmModalNo").click(function(e) {
+          $("#event-modal").modal("hide");
+      });
+   
+      $("#confirmModalYes").click(function(e) {
+          window.location.href = theHREF;
+      });    
+
+      $("#alertMsg").fadeOut(3000);
+  } );
+
+</script>
+{% endblock %}

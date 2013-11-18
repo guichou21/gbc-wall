@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+	<channel>
+		<title>Karen.Guiom &amp; Alice</title>
+		<link>{{app.request.scheme ~  '://' ~  app.request.host}}{{ path('gb_creation_rss_feed') }}</link>
+        <description>Notre mur de photos</description>
+        <language>FR-fr</language>
+        <pubDate>{{"now"}}</pubDate>
+	    <copyright>Copyright 2013 GB Creation</copyright>
+		{% for item in items %}
+		        <item>
+		            <title>{{item.description|default(item.file)}}</title>
+		            <link>{{app.request.scheme ~  '://' ~  app.request.host}}{{ path('gb_creation_wall_homepage') }}{{item.id}}</link>
+		            <pubDate>{{item.date|date("D, d M Y H:i:s T")}}</pubDate>
+		            <description>
+		                <![CDATA[<img width='300px' src='{{app.request.scheme ~  '://' ~  app.request.host}}{{app.request.basepath}}/images/wall/{{item.file}}'/>]]>
+		            </description>
+		        </item>
+		{% endfor %}
+    </channel>
+</rss>

@@ -1,0 +1,25 @@
+{% extends 'GbCreationUserBundle::layout.html.twig' %}
+ 
+{% block body %}
+     <section id="edit">
+      <div class="page-header">
+            <h1>Espace réservé aux Administrateurs</h1>
+      </div>
+
+
+  {% if error %}
+    <div class="alert alert-error">{{ error.message|trans({}, 'FOSUserBundle') }}</div>
+  {% endif %}
+ 
+  <form action="{{ path('fos_user_security_check') }}" method="post">
+    <label for="username">Login :</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+ 
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="_password" />
+    <br />
+    <input class="btn btn-primary" type="submit" value="Connexion" />
+  </form>
+ 
+     </section>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'GbCreationWallBundle::layout.html.twig' %}
+
+{% block body %}
+
+<div class="row-fluid">
+	<div class="span4">
+		<img src="{{ asset('resources/img/emailUs.png') }}" class="hidden-wall">
+	</div>
+	<div class="span8">
+		<h1>contactez nous</h1>
+
+		{% for type in ['notice', 'info', 'success', 'error'] %}
+	        {% for flashMessage in app.session.flashbag.get(type) %}
+	            <div  id="alertMsg" class="alert alert-{{ type }}">
+	            	<button class="close" data-dismiss="alert" type="button">×</button>
+	                {{ flashMessage }}
+	            </div>
+	        {% endfor %}
+	    {% endfor %}
+
+
+		<form action="{{ path('gb_creation_contact') }}" method="post" {{ form_enctype(form) }}>
+		    
+
+		<div class="error">
+			{{ form_errors(form) }}
+		</div>
+
+		<fieldset class="itemForm">
+		    <div class="form-group">
+		    	{{ form_label(form.email, "Email") }}
+			    {{ form_errors(form.email) }}
+				{{ form_widget(form.email, { 'attr': {'class': 'inputContactEmail'} }) }}
+		    </div>
+		    <div class="form-group">
+				{{ form_label(form.subject, "Sujet") }}
+			    {{ form_errors(form.subject) }}
+				{{ form_widget(form.subject, { 'attr': {'class': 'inputContactSubject'} }) }}
+			</div>
+			<div class="form-group">
+			  {{ form_label(form.content, "Contenu") }}
+			  {{ form_errors(form.content) }}
+			  {{ form_widget(form.content, { 'attr': {'class': 'inputContactContent'}}) }}
+			</div>
+
+			{{ form_rest(form) }}
+
+		    <button class="btn btn-primary" type="submit">Envoyer</button>
+		  </fieldset>
+		</form>
+	</div>
+</div>	
+{% endblock %}
+
+{% block javascripts %} 
+
+<script type="text/javascript">
+  $(document).ready(function() {
+	$("#alertMsg").fadeOut(3000);
+  } );
+
+</script>
+{% endblock %}

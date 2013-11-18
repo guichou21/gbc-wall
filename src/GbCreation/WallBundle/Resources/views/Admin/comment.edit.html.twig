@@ -1,0 +1,13 @@
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+     <section id="edit">
+      <div class="page-header">
+        <h1>Modification</h1>
+      </div>
+
+    {% include 'GbCreationWallBundle:Comment:edit.form.html.twig' with { 'form': form, 'comment_id': comment_id  } %}
+    </section>
+
+{% endblock %}

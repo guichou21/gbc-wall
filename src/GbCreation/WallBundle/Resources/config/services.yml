@@ -1,0 +1,15 @@
+parameters:
+#    gb_creation_wall.example.class: GbCreation\WallBundle\Example
+
+
+services:
+#    gb_creation_wall.example:
+#        class: %gb_creation_wall.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    gb_creation_wall.antispam:
+        class: GbCreation\WallBundle\Antispam\GbcAntispam
+        arguments: [3]
+
+#    gb_creation_wall.picture_uploader:
+#        class: GbCreation\WallBundle\Uploader\GbcUploader
+#        arguments: [%gb_creation_wall.picture_directory%]

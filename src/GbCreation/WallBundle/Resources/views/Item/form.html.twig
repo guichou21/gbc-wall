@@ -1,0 +1,29 @@
+<form action="{{ path('gb_creation_admin_item_create') }}" method="post" {{ form_enctype(form) }}>
+<div class="error">
+	{{ form_errors(form) }}
+</div>
+
+  <fieldset class="itemForm">
+    <div class="form-group">
+    	{{ form_errors(form.fileToUpload) }}
+    	<div id="dropZone" class="dropZone">
+    		<span class="labelInputFile">ou</span>
+			{{ form_widget(form.fileToUpload,{ 'attr': {'class': 'inputFile'} }) }}
+		</div>
+    </div>
+    <div class="form-group">
+		  {{ form_label(form.description) }}
+	    {{ form_errors(form.description) }}
+		  {{ form_widget(form.description, { 'attr': {'class': 'inputDescription'} }) }}
+	</div>
+
+  <div class="form-group">
+      {{ form_label(form.date) }}
+      {{ form_errors(form.date) }}
+      {{ form_widget(form.date, { 'attr': {'class': 'datepicker'}}) }}
+  </div>
+
+	{{ form_rest(form) }}
+    <button class="btn btn-primary" type="submit">Ajouter</button>
+  </fieldset>
+</form>

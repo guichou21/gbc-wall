@@ -1,0 +1,19 @@
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+     <section id="stats">
+      <div class="page-header">
+        <h1>Administration</h1>
+      </div>
+      <p class="lead">Stats admin à étayer. google stats à inclure?</p>
+
+       <!-- <h2>Stats</h2> -->
+       <h4>Photos & Vidéos</h4>
+             <p>Il y a {{nbPictureItems}} photos</p>
+             <p>Il y a {{nbVideoItems}} vidéos</p>
+       <h4>Commentaires</h4>
+          <p>Il y a {{nbComments}} commentaires</p>
+    </section>
+
+{% endblock %}

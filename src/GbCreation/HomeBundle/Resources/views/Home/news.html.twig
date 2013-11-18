@@ -1,0 +1,65 @@
+
+    <article id="news">
+        <header>
+            <h2>Les Nouveautés</h2>
+            <span>Regardez si vous avez vu les derniers ajouts ci dessous</span>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="4u">
+                    <section class="box box-style1">
+                        <h3>En Photos</h3>
+                        <p>derniers clichés</p>
+                        <ul class="rss">
+                            {% for item in items %}
+                            <li>
+                                <a href="{{ path('gb_creation_wall_homepage') }}{{ item.id }}"><span class="picture">{{ item.description }}</span></a>
+                            </li>
+                            {% endfor %}
+                        </u>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="box box-style1">
+                        <h3>Commentaires</h3>
+                        <p>sur les photos</p>
+                        <ul class="rss">
+                             {% for commentaire in comments %}
+                                <li>
+                                    <span class="author">{{ commentaire.author }}</span> :
+                                    <a href="{{ path('gb_creation_wall_homepage') }}{{ commentaire.idItem.id}}"><span class="comment">{{ commentaire.comment }}</span></a>
+                                </li>
+                            {% endfor %}
+                        </u>
+                    </section>
+                </div>
+                <div class="4u">
+                    <section class="box box-style1">
+                        <h3>Vidéos</h3>
+                        <p>derniers montages</p>
+                         <ul class="rss">       
+                            <!-- <div class="rssVideoContainer"></div> -->
+                             {% for video in videos %}
+                            <li>
+                                <a href="{{ path('gb_creation_wall_homepage') }}{{ video.id }}"><span class="picture">{{ video.description }}</span></a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                 <div class="4u">
+                    <section class="box box-style1">
+                        <h3>Blog</h3>
+                        <p>derniers posts</p>
+                            <div class="rssBlogContainer"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Déjà tout vu, mais envie de se rendre sur l'un des sites?</p>
+            <a href="#portfolio" class="button button-big">Voir les différents sites</a>
+        </footer>
+    </article>

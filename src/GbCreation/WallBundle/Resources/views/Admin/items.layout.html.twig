@@ -1,0 +1,111 @@
+
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+<section id="gallery">
+      <div class="page-header">
+        {% block item_title %}{% endblock %}
+      </div>
+
+{# {{ dump(app.session.flashbag.get('notice')) }} #}
+    
+ {% for type in ['notice', 'info', 'success', 'error'] %}
+        {% for flashMessage in app.session.flashbag.get(type) %}
+            <div  id="alertMsg" class="alert alert-{{ type }}">
+              <button class="close" data-dismiss="alert" type="button">×</button>
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+      <table id="resultData" class="table table-striped tableSorter">
+         <thead>
+          <tr>
+            <th id="thId">Id</th>  
+            <th>Date</th>  
+            <th>Nom</th>  
+            <th>Description</th>
+            <th>Likes</th>
+            <th>type</th>
+            <th id="thAction">Action</th0>
+          </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.date|date('d/m/Y') }}</td>
+            <td>{{ item.file }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.nbLike }}</td>
+            <td>{{ item.type }}</td>
+            <td>
+              <a href="{{ path('gb_creation_wall__show', { 'id': item.id }) }}"><i class="icon-picture icon"></i></a>
+              - <a href="{{ path('gb_creation_admin_item_edit', { 'id': item.id }) }}"><i class="icon-pencil icon"></i></a>
+              - <a class="confirmModalLink" href="{{ path('gb_creation_admin_item_delete', { 'id': item.id }) }}" data-toggle="modal"><i class="icon-remove icon"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% block item_pagination %} 
+
+{% endblock %}
+
+    </section>
+
+
+     <div id="event-modal" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Confirmation Suppression</h3>
+            </div>
+            <div class="modal-body">
+                <p>Etes-vous certain de vouloir supprimer ?</p>
+                <div class="alert">Attention, Les commentaires associés à la photo seront supprimés.....</div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn" id="confirmModalNo">Non</a>
+              <a href="#" class="btn btn-primary" id="confirmModalYes">Oui</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{# http://www.dator.fr/realiser-un-tableau-dynamique-trie-et-pagine-avec-jquery/ #}
+{% block javascripts %} 
+  <script src="{{ asset('resources/bootstrap/js/bootstrap-modal.js') }}"></script>
+  <script src="{{ asset('resources/plugins/tableSorter/jquery.tablesorter.js') }}"></script>
+ <script type="text/javascript">
+  $(document).ready(function() {
+      
+      $('#resultData').tablesorter(); 
+      $("#thAction").toggleClass('header ');
+
+       var theHREF; 
+      $(".confirmModalLink").click(function(e) {
+          e.preventDefault();
+          theHREF = $(this).attr("href");
+          $("#event-modal").modal("show");
+      });
+   
+      $("#confirmModalNo").click(function(e) {
+          $("#event-modal").modal("hide");
+      });
+   
+      $("#confirmModalYes").click(function(e) {
+          window.location.href = theHREF;
+      });    
+
+
+      $("#alertMsg").fadeOut(3000);
+
+    
+
+      } );
+
+</script>
+{% endblock %}

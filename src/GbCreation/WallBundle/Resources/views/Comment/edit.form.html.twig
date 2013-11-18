@@ -1,0 +1,28 @@
+<form action="{{ path('gb_creation_admin_comment_edit', { 'id': comment_id }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }} 
+
+
+{# 
+	<div class="error">
+		{{ form_errors(form) }}
+	</div>
+
+	<div class="commment"
+		{{ form_label(form.author) }}
+		{{ form_label(form.comment) }}
+
+		{{ form_errors(form.author) }}
+		{{ form_widget(form.author) }}
+		
+		{{ form_errors(form.comment) }}
+		{{ form_widget(form.comment) }}
+		
+
+	{{ form_rest(form) }}
+
+#}
+
+    <p>
+        <button class="btn btn-primary" type="submit">Modifier</button>
+    </p>
+</form>

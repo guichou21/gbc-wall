@@ -1,0 +1,20 @@
+    <article class="container" id="top">
+        <div class="row">
+            <div class="12u">
+                <header>
+                    <h1>Karen.Guiom <span class="intro">And Alice</span></h1>
+                </header>
+                <div class="homeSlider">
+                    <div id="slider">
+                        {% for img in headerSlide %}
+                        {# {{ dump(img) }} #}
+                        <img src="{{ asset(['images/slider/',img]|join) }}" alt="header slide" /><br/>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <footer>
+                <a href="#news" class="button button-big">Voir les nouveautés</a>
+    </footer>

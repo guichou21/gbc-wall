@@ -1,0 +1,27 @@
+    <article class="container" id="top">
+        <div class="row">
+            <div class="12u">
+                <header>
+                    <h1>Karen.Guiom <span class="intro">And Alice</span></h1>
+                </header>
+
+
+                <div class="slider-wrapper theme-default">
+                    <div id="slider" class="nivoSlider">
+                        {% for img in headerSlide %}
+                        {# {{ dump(img) }} #}
+                        <img src="{{ asset(['images/slider/',img]|join) }}"  alt="header slide" /><br/>
+                        {% endfor %}
+                    </div>
+                    <div id="htmlcaption" class="nivo-html-caption">
+                        <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </article>
+    <footer>
+                <a href="#news" class="button button-big">Voir les nouveautés</a>
+    </footer>

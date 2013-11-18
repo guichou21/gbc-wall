@@ -1,0 +1,9 @@
+
+{% extends 'GbCreationWallBundle:Admin:comments.layout.html.twig' %}
+
+{% block comment_pagination %}  
+    <div class="pagination pagination-centered">
+      <ul><li><a href="{{ path('gb_creation_admin_comments_show', {'page':1}) }}">Voir avec pagination</a></li></ul>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+
+{% extends 'GbCreationWallBundle:Admin:items.layout.html.twig' %}
+
+
+{% block item_title %}<h1>Liste des Vidéos</h1>{% endblock %}
+
+
+{% block item_pagination %}
+<div class="pagination pagination-centered">
+  <ul>
+    <!--<li><a href="#">Prev</a></li>-->
+    {% for p in range(1, last_page) %}
+      <li{% if p == current_page %} class="active"{% endif %}>
+        <a href="{{ path('gb_creation_admin_items_video_show', {'page':p}) }}">{{ p }}</a>
+      </li>
+    {% endfor %}
+     <!--<li><a href="#">Next</a></li>-->
+  </ul>
+  <ul>
+  <li><a href="{{ path('gb_creation_admin_items_video_show_noPagination') }}"><i class="icon-th-list" alt="Voir sans Pagination"></i></a> </li>
+  </ul>
+</div>
+{% endblock %}
+
+

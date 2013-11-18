@@ -1,0 +1,7 @@
+{% extends 'GbCreationUserBundle::admin.layout.html.twig' %}
+
+{% block fos_user_content %}
+
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}) }}</p>
+
+{% endblock %}

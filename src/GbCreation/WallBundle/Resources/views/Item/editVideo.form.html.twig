@@ -1,0 +1,40 @@
+
+<div class="row-fluid">
+
+  <div class="span4">
+   <!-- <iframe src="{{ item_name }}" width="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
+  <img src="{{ asset('resources/img/img_video3.jpg') }}">
+  </div>
+
+  <div class="span8">
+    <form action="{{ path('gb_creation_admin_item_edit', { 'id': item_id }) }}" method="post" {{ form_enctype(form) }}>
+       <div class="error">
+    	{{ form_errors(form) }}
+    </div>
+
+      <fieldset class="itemForm">
+       <div class="form-group">
+          {{ form_label(form.file) }}
+          {{ form_errors(form.file) }}
+          {{ form_widget(form.file,{ 'attr': {'class': 'urlVideo'} }) }}
+      </div>
+
+        <div class="form-group">
+    		  {{ form_label(form.description) }}
+    	    {{ form_errors(form.description) }}
+    		  {{ form_widget(form.description, { 'attr': {'class': 'inputDescription'} }) }}
+    	</div>
+
+      <div class="form-group">
+          {{ form_label(form.date) }}
+          {{ form_errors(form.date) }}
+          {{ form_widget(form.date, { 'attr': {'class': 'datepicker'}}) }}
+      </div>
+
+    	{{ form_rest(form) }}
+        <button class="btn btn-primary" type="submit">Modifier</button>
+        <a href="{{ path('gb_creation_admin_items_show') }}" class="btn btn-primary">Annuler</a>
+      </fieldset>
+    </form>
+  </div>    
+</div>

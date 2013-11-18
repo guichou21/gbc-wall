@@ -1,0 +1,17 @@
+parameters:
+    RSS:
+        NB_MAX_ITEM: 10
+        NB_MAX_COMMENT: 10
+    Request:
+        NB_ITEM_PER_PAGE: 10
+    Pagination:
+        PAGINATION_NB_ITEM_PER_PAGE: 20
+    Upload:
+        extensions: 
+            - '.png'
+            - '.gif'
+            - '.jpg'
+            - '.jpeg'
+        videoWebSite:
+            - 'http://www.youtube.com/embed/'
+            - 'http://player.vimeo.com/video/'

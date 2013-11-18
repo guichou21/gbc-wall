@@ -1,0 +1,30 @@
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+  <div id="event-modal" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Confirmation Suppression</h3>
+            </div>
+            <div class="modal-body">
+                <p>Etes-vous certain de vouloir supprimer ?</p>
+            </div>
+            <div class="modal-footer">
+            <a href="{{ path('gb_creation_admin_items_show') }}" class="btn">Annuler</a>
+            <a href="{{ path('gb_creation_admin_item_delete', { 'id': item_id }) }}" class="btn btn-primary">Supprimer</a>
+        </div>
+    </div>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-modal.js') }}"></script>
+{% endblock %}
+
+{% block javascripts %} 
+  <script src="{{ asset('resources/bootstrapjs/bootstrap-modal.js') }}"></script>
+ <script type="text/javascript">
+  $(document).ready(function() {
+       $('#event-modal').modal({
+        backdrop: true;
+    });
+  } );
+
+</script>
+{% endblock %}

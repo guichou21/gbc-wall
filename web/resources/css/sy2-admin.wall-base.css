@@ -1,0 +1,311 @@
+@font-face {
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Irish Grover'), local('IrishGrover'), url('fonts/IrishGrover.woff') format('woff');
+}
+@font-face {
+  font-family: 'Kite One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kite One'), local('KiteOne-Regular'), url('fonts/KiteOne-Regular.woff') format('woff');
+}
+
+
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    font-family: 'Kite One', Arial, Helvetica, sans-serif;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+     color: #0193A3;
+     font-family: 'Kite One', Helvetica, sans-serif ;
+}
+
+.myBrand{
+    font-family: 'Irish Grover',cursive;
+    font-weight: 300;
+    color: #266BB2 !important;
+}
+
+.userName{
+    color: #266BB2 !important;
+}
+
+/*********************************/
+/* Footer                        */
+/*********************************/
+#footer {
+    /*border-top: 1px solid #CCCCCC;*/
+    clear: both;
+    color: #AAAAAA;
+    padding: 10px;
+    text-align: center;
+}
+
+#footer h3 {
+    color: #266BB2;
+    font-family: 'La Belle Aurore',cursive;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Sidenav for Docs
+-------------------------------------------------- */
+
+.bs-docs-sidenav {
+  width: 228px;
+  margin: 30px 0 0;
+  padding: 0;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+     -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+          box-shadow: 0 1px 4px rgba(0,0,0,.065);
+}
+.bs-docs-sidenav > li > a {
+  display: block;
+  width: 190px \9;
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border: 1px solid #e5e5e5;
+}
+.bs-docs-sidenav > li:first-child > a {
+  -webkit-border-radius: 6px 6px 0 0;
+     -moz-border-radius: 6px 6px 0 0;
+          border-radius: 6px 6px 0 0;
+}
+.bs-docs-sidenav > li:last-child > a {
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+}
+.bs-docs-sidenav > .active > a {
+  position: relative;
+  z-index: 2;
+  padding: 9px 15px;
+  border: 0;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+}
+/* Chevrons */
+.bs-docs-sidenav .icon-chevron-right {
+  float: right;
+  margin-top: 2px;
+  margin-right: -6px;
+  opacity: .25;
+}
+.bs-docs-sidenav > li > a:hover {
+  background-color: #f5f5f5;
+}
+.bs-docs-sidenav a:hover .icon-chevron-right {
+  opacity: .5;
+}
+.bs-docs-sidenav .active .icon-chevron-right,
+.bs-docs-sidenav .active a:hover .icon-chevron-right {
+  background-image: url(../../bootstrap/img/glyphicons-halflings-white.png);
+  opacity: 1;
+}
+.bs-docs-sidenav.affix {
+  top: 40px;
+}
+.bs-docs-sidenav.affix-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 270px;
+}
+
+
+/* Form input*/ 
+.itemForm{
+  width: 80%;
+  margin:10px auto;
+  display: block;
+}
+
+.inputDescription{
+
+}
+
+#dropZone{
+  margin: auto;
+  border:dashed;
+  border-width: 5px;
+  min-height: 200px;
+  vertical-align: center;
+}
+
+.inputFile{
+  margin:100px auto;
+  display: block;
+}
+.labelInputFile{
+   /*float:left;
+   display: block;*/
+}
+
+.urlVideo{
+  width:300px;
+  height:auto;
+}
+
+.videoIcon{
+  height: 30px;
+  width: auto;
+}
+
+/* DropBox for upload
+-------------------------------------------------- */
+
+
+
+
+/* AdminDesign
+-------------------------------------------------- */
+.Thumbnail  {
+  max-width:300px;
+   -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#event-modal {
+    margin-top: 0;
+}
+
+/* tables */
+table.tableSorter {
+  font-family:arial;
+  background-color: #CDCDCD;
+  margin:10px 0pt 15px;
+  font-size: 8pt;
+  width: 100%;
+  text-align: left;
+}
+table.tableSorter thead tr th, table.tableSorter tfoot tr th {
+  background-color: #e6EEEE;
+  border: 1px solid #FFF;
+  font-size: 8pt;
+  padding: 4px;
+}
+table.tableSorter thead tr .header {
+  background-image: url(../img/tableSorter/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+table.tableSorter tbody td {
+  color: #3D3D3D;
+  padding: 4px;
+  background-color: #FFF;
+  vertical-align: top;
+}
+table.tableSorter tbody tr.odd td {
+  background-color:#F0F0F6;
+}
+table.tableSorter thead tr .headerSortUp {
+  background-image: url(../img/tableSorter/asc.gif);
+}
+table.tableSorter thead tr .headerSortDown {
+  background-image: url(../img/tableSorter/desc.gif);
+}
+table.tableSorter thead tr .headerSortDown, table.tableSorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
+table.tableSorter #thId{
+  width:20px;
+}
+
+table.tableSorter #thIdItem{
+  width:20px;
+}
+
+table.tableSorter #thAction{
+  width:70px;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+   body {
+    padding-top: 60px;
+  }
+  .bs-docs-container {
+    max-width: 970px;
+  }
+  .bs-docs-sidenav {
+    width: 258px;
+  }
+  .bs-docs-sidenav > li > a {
+    width: 230px \9; /* Override the previous IE8-9 hack */
+  }
+}
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+   body {
+    padding-top: 0px;
+  }
+  /* When affixed, space properly */
+  .bs-docs-sidenav {
+    top: 0;
+    width: 218px;
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+   body {
+    padding-top: 0px;
+  }
+  /* Adjust sidenav width */
+  .bs-docs-sidenav {
+    width: 166px;
+    margin-top: 20px;
+  }
+  .bs-docs-sidenav.affix {
+    top: 0;
+  }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+   body {
+    padding-top: 0px;
+  }
+  /* Sidenav */
+  .bs-docs-sidenav {
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .bs-docs-sidenav.affix {
+    position: static;
+    width: auto;
+    top: 0;
+  }
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+ body {
+    padding-top: 0px;
+  }
+
+}

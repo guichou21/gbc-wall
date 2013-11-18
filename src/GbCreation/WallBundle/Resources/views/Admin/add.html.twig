@@ -1,0 +1,70 @@
+{% extends 'GbCreationWallBundle::admin.layout.html.twig' %}
+
+{% block body %}
+     
+  <div class="tabbable">
+   <ul class="nav nav-tabs" id="myFormNav">
+    <li class="active"><a href="#tabPicture">Photos</a></li>
+    <li><a href="#tabVideo">Vidéos</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="tabPicture">
+         <section id="add">
+            {% include 'GbCreationWallBundle:Item:form.html.twig' with { 'form': form } %}
+        </section>
+     </div>
+
+      <div class="tab-pane" id="tabVideo">
+         
+        {% include 'GbCreationWallBundle:Item:video.form.html.twig' with { 'formVideo': formVideo } %}
+        
+      </div>
+    </div>
+  </div>
+
+	{% for type in ['notice', 'info', 'success', 'error'] %}
+        {% for flashMessage in app.session.flashbag.get(type) %}
+            <div  id="alertMsg" class="alert alert-{{ type }}">
+            	<button class="close" data-dismiss="alert" type="button">×</button>
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}
+
+
+{# http://trentrichardson.com/examples/timepicker/#timezone_examples #}
+{% block javascripts %} 
+<script src="{{ asset('resources/plugins/jquery-ui/1.10/minified/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('resources/plugins/jquery-ui/jquery-ui-timepicker-addon.js') }}"></script>
+<script src="{{ asset('resources/plugins/jquery-ui/jquery-ui-sliderAccess.js') }}"></script>
+<script src="{{ asset('resources/bootstrap/js/bootstrap-tab.js') }}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+	$("#alertMsg").fadeOut(3000);
+
+	$('.datepicker').datetimepicker({
+		dateFormat: "dd/mm/yy",
+		timeFormat: "HH:mm"
+	});
+
+    $('#myFormNav a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+    })
+
+    $( "#youtube" ).click(function() {
+      $("#gbcreation_wallbundle_itemvideotype_file").val('http://www.youtube.com/embed/');
+    });
+
+    $( "#vimeo" ).click(function() {
+      $("#gbcreation_wallbundle_itemvideotype_file").val('http://player.vimeo.com/video/');
+    });
+
+  } );
+
+</script>
+{% endblock %}

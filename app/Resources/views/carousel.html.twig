@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="copyright" content="GbCreation">
+        <meta name="author" content="GbCreation">
+        <meta name="language" content="fr">
+        <meta http-equiv="content-language" content="fr">
+        
+        <title>Karen.Guiom | {% block title %}WeSite!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> 
+
+        {% block stylesheets %}
+        <link href="{{ asset('resources/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('resources/bootstrap/css/bootstrap-responsive.css') }}" rel="stylesheet">   
+         <link href="{{ asset('resources/bootstrap/css/sy2-wall.css') }}" rel="stylesheet">   
+        {% endblock %}
+
+      <!-- 
+Faire les icon de différentes taille.......
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+    -->
+      <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+    </head>
+    <body>
+
+<!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Karen.Guiom</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+
+
+
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="{{ asset('images/slider/header0.jpg') }}" alt="">
+        </div>
+        <div class="item">
+          <img src="{{ asset('images/slider/header1.jpg') }}" alt="">
+        </div>
+        <div class="item">
+          <img src="{{ asset('images/slider/header2.jpg') }}" alt="">
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+
+
+
+    
+        <div id="root">
+            <header class="header">
+                <div class="wrap">
+                    <a href="/" class="logo"><img src="{{ asset('resources/img/article_blog.jpg') }}" alt=""></a>
+                    <nav>
+                        <a href="/blog">Blog</a>
+                        <a href="/tutoriels">Wall</a>
+                        <form method="get" action="/search">
+                            <input name="q" placeholder="Rechercher">
+                        </form>
+              
+                    </nav>
+                </div>
+            </header>
+            <section class="subhead">
+                <div class="wrap" id="subhead">
+                    <h1>Karen.Guiom & Alice</h1>
+                    <div class="subtitle">
+                        le site de la famille
+                    </div>
+                </div>
+            </section>
+
+quel doctype
+        {% block sidebar %}{% endblock %} - 
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+        </div>
+
+
+
+
+  <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{{ asset('resources/bootstrap/js/jquery.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-transition.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-alert.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-modal.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-dropdown.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-scrollspy.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-tab.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-tooltip.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-popover.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-button.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-collapse.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-carousel.js') }}"></script>
+    <script src="{{ asset('resources/bootstrap/js/bootstrap-typeahead.js') }}"></script>
+     <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="{{ asset('resources/bootstrap/js/holder/holder.js') }}"></script>
+    <noscript>Votre navigateur ne supporte pas le javaScript</noscript>
+
+    </body>
+</html>

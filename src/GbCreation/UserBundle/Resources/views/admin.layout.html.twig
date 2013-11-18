@@ -1,0 +1,44 @@
+{% extends '::admin.base.html.twig' %}
+
+
+
+{% block sidebar %}
+      <div class="bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="{% if app.request.get('_route') == 'gb_creation_admin__add' or app.request.get('_route') == 'gb_creation_admin__index' %}active{% endif %}"><a href="{{ path('gb_creation_admin__add') }}" title="Ajouter un élément"><i class="icon-chevron-right"></i> Ajout</a></li>
+          <li class="{% if app.request.get('_route') == 'gb_creation_admin_items_show' or app.request.get('_route') == 'gb_creation_admin_item_edit' %}active{% endif %}"><a href="{{ path('gb_creation_admin_items_show') }}" title="Voir mes photos"><i class="icon-chevron-right"></i> Mes Photos</a></li>
+          <li class="{% if app.request.get('_route') == 'gb_creation_admin_comments_show' or app.request.get('_route') == 'gb_creation_admin_comment_edit'%}active{% endif %}"><a href="{{ path('gb_creation_admin_comments_show') }}" title="Voir les commentaires"><i class="icon-chevron-right"></i> Les Commentaires</a></li>
+          <li class="{% if app.request.get('_route') == 'gb_creation_admin_stats' %}active{% endif %}"><a href="{{ path('gb_creation_admin_stats') }}" title="Voir les stats du site"><i class="icon-chevron-right"></i> Stats</a></li>
+        </ul>
+      </div>
+
+      <div class="bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav">
+          <li class="" ><a href="{{ path('fos_user_security_logout') }}" title="Se déconnecter"><i class="icon-off"></i> Déconnexion</a></li>
+        </ul>
+      </div>
+
+            {# {{ app.request.get('_route') }}  #}
+{% endblock %}
+
+
+
+{% block body %}
+<section id="edit">
+<div class="page-header">
+      <h1>Création d'un admin</h1>
+</div>
+  {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+  {% for key, message in app.session.flashbag.all() %}
+    <div class="alert alert-{{ key }}">
+      {{ message|trans({}, 'FOSUserBundle') }}
+    </div>
+  {% endfor %}
+ 
+  {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+  {% block fos_user_content %}
+  {% endblock fos_user_content %}
+ </section>
+
+
+{% endblock %}

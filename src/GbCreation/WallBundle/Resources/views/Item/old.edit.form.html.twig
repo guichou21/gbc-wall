@@ -1,0 +1,9 @@
+
+<img src="{{ asset(['images/wall/', item_name]|join) }}" class="Thumbnail" alt="{{ item_name }} n'a pas été trouvée" class="large" />
+
+<form action="{{ path('gb_creation_admin_item_edit', { 'id': item_id }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button class="btn btn-primary" type="submit">Modifier</button>
+    </p>
+</form>
