@@ -1,0 +1,13 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: demo-wall
+    database_user: todo
+    database_password: todo
+    mailer_transport: todo
+    mailer_host:      ~
+    mailer_user: todo
+    mailer_password: todo
+    locale: fr
+    secret: todo
