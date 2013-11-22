@@ -22,6 +22,16 @@ the webSite name and description
     rss infos
     external portfolio  url
 
+Folder Web
+===========
+- To save the uploaded picture, create the folder images/wall
+- Change the picture in images/slider
+
+WebSite stats (js)
+==================
+#web/resources/js
+Paste google analytics script in: sy2-wall.js
+
 Copy public files from the bundle web/public to web/public
 =======================================================
 php app/console assets:install web --env=prod
@@ -36,11 +46,6 @@ php app/console fos:user:promote testuser ROLE_ADMIN
 
 or create with: --super-admin
 
-
-Folder Web
-===========
-- To save the uploaded picture, create the folder images/wall
-- Change the picture in images/slider
 
 Admin
 =======

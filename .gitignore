@@ -7,10 +7,10 @@
 /app/config/parameters.yml
 
 
-# Ma conf
-#js propre au site (stats google, ...)
-web/resources/js/sy2-wall.js
-#images propres au site (header, upload, ...)
+#### Ma conf
+##js propre au site (stats google, ...)
+#web/resources/js/sy2-wall.js
+
+##images propres au site (header, upload, ...)
 web/images/slider/*
 web/images/wall/*
-
