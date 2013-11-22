@@ -8,7 +8,7 @@
         <meta name="language" content="fr">
         <meta http-equiv="content-language" content="fr">
         
-        <title>Karen.Guiom | {% block title %}WeSite!{% endblock %}</title>
+        <title>{{ webSiteName }} | {% block title %}WeSite!{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> 
 
         {% block stylesheets %}
@@ -44,7 +44,7 @@ Faire les icon de différentes taille.......
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">Karen.Guiom</a>
+            <a class="brand" href="#">{{ webSiteName }}</a>
             <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
             <div class="nav-collapse collapse">
               <ul class="nav">
@@ -113,9 +113,9 @@ Faire les icon de différentes taille.......
             </header>
             <section class="subhead">
                 <div class="wrap" id="subhead">
-                    <h1>Karen.Guiom & Alice</h1>
+                    <h1>{{ webSiteName }} {{ webSiteDescription }}</h1>
                     <div class="subtitle">
-                        le site de la famille
+                        site demo
                     </div>
                 </div>
             </section>

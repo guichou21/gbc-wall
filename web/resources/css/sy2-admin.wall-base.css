@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'La Belle Aurore';
+  font-style: normal;
+  font-weight: 400;
+  src: local('La Belle Aurore'), local('LaBelleAurore'), url('fonts/LaBelleAurore.woff') format('woff');
+}
+
+@font-face {
   font-family: 'Irish Grover';
   font-style: normal;
   font-weight: 400;

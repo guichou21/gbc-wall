@@ -8,7 +8,7 @@
         <meta name="language" content="fr">
         <meta http-equiv="content-language" content="fr">
         
-        <title>Karen.Guiom | {% block title %}WeSite!{% endblock %}</title>
+        <title>{{ webSiteName }} | {% block title %}WeSite!{% endblock %}</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" /> 
 
         {% block stylesheets %}
@@ -32,7 +32,7 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="brand myBrand" href="{{ path('gb_creation_home_homepage') }}">Karen.Guiom </a>
+              <a class="brand myBrand" href="{{ path('gb_creation_home_homepage') }}">{{ webSiteName }} </a>
 
               <div class="nav-collapse collapse">
                 <ul class="nav">

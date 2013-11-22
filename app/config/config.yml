@@ -25,6 +25,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+        webSiteName: %param_webSiteName%
+        webSiteDescription: %param_webSiteDescription%
 
 # Assetic Configuration
 assetic:
@@ -96,4 +99,4 @@ fos_user:
 #                # Adresse de l'expediteur
 #                address:        admin@monsiteweb.com
 #                # Nom de l'expediteur
-#                sender_name:    Admin Karen.Guiom
+#                sender_name:    Admin du site demo

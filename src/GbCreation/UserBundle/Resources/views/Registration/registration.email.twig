@@ -4,10 +4,10 @@
 {% autoescape false %}
 Bonjour {{ user.username }} !
 
-Vous devez confirmer voter inscription sur Karen.Guiom en cliquant sur le lien suivant : {{ confirmationUrl }}
+Vous devez confirmer voter inscription sur {{ webSiteName }} en cliquant sur le lien suivant : {{ confirmationUrl }}
 
 Amicalement,
-Administrateur de karen.guiom
+Administrateur de {{ webSiteName }}
 {% endautoescape %}
 {% endblock %}
 

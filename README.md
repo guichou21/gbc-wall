@@ -1,9 +1,28 @@
-Symfony2-wall
+gbc-wall
 ====================
 
-A code to create a homepage and a wall of item (photos for now)
+A website to provide a homepage and a wall of item (photos and video)
 
-Copy public files from web/public bundle to web/public
+Activate php module
+====================
+php_intl
+
+
+Define the parameters 
+======================
+#app/config/parameters.yml
+the database accesss
+the webSite name and description
+    webSiteName
+    webSiteDescription
+
+#src/gbcreation/HomeBundle/resource/config/parameters.yml
+    Home param Bundle
+    Contact infos
+    rss infos
+    external portfolio  url
+
+Copy public files from the bundle web/public to web/public
 =======================================================
 php app/console assets:install web --env=prod
 php app/console assets:install web
@@ -17,15 +36,17 @@ php app/console fos:user:promote testuser ROLE_ADMIN
 
 or create with: --super-admin
 
-Folder App
-===========
-add wallBlog.yml to config.yml
 
 Folder Web
 ===========
 - To save the uploaded picture, create the folder images/wall
-- RSS twig. define the url to request
+- Change the picture in images/slider
 
 Admin
 =======
 Connect with admin/adminpass then create a new admin user and delete this one
+
+
+Put data
+=========
+user sql script and images in zip archive to initiate an example

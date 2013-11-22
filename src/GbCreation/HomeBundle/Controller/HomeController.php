@@ -31,8 +31,8 @@ class HomeController extends Controller
         $NB_ITEM_TO_GET = $params['MAX_ITEM'];
         $NB_COMMENT_TO_GET = $params['MAX_COMMENT'];
 		
-		$rssFeeds = $this->container->getParameter('rssFeeds');
-        $RSS_VIDEO_FEED = $rssFeeds['RSS_VIDEO_FEED'];
+		//$rssFeeds = $this->container->getParameter('rssFeeds');
+        //$RSS_VIDEO_FEED = $rssFeeds['RSS_VIDEO_FEED'];
 
         $em = $this->getDoctrine()
                    ->getManager();
@@ -51,7 +51,17 @@ class HomeController extends Controller
 
     public function portfolioAction()
     {
-        return $this->container->get('templating')->renderResponse('GbCreationHomeBundle:Home:portfolio.html.twig');
+    	$params = $this->container->getParameter('param');
+		$rssFeeds = $this->container->getParameter('urls');
+       
+        $urlBlog = $rssFeeds['EXTERNAL_BLOG'];
+        $urlShare = $rssFeeds['SHARE_DATA'];
+
+
+        return $this->container->get('templating')->renderResponse('GbCreationHomeBundle:Home:portfolio.html.twig',array(
+        		'urlBlog' => $urlBlog,
+        		'urlShare' => $urlShare,
+        	));
     }
 
     public function decompteAction()
