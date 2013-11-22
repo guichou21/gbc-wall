@@ -2,13 +2,11 @@ Firefox : tester responsive : ctrl maj M
 -------------------
 - Evols  &   Bugs -
 -------------------
-* Readme : procédure install à terminer (générer base, ) !!!
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
 * Filtre Photo / Vidéo / Année
 * form contact  prametrer envoi mail
-* composer.phar a mettre en place
 * Puis supprimer FosUSerBundle et réimporter tout avec composer : http://rkueny.fr/developpement-web/integrer-facilement-facebook-connect-et-twitter-connect-avec-fosuserbundle-pour-symfony-2-1
 * durée session
 * Créer une fenetre de config appli qui ecris un fichier de propriété relatif a l'application contenant. plus un raz par defaut :
@@ -73,6 +71,8 @@ http://www.symfony2-checklist.com/fr
 [done] mise en place imageLoaded pour reorganiser wall lorsque image chargee
 [done] iframe responsive design https://github.com/jonsuh/Responsive-YouTube-Vimeo-Embed-and-HTML5-Videos-with-CSS
 [done] image existe deja - renommer en mettant un -2 par ex
+[done] readme - procedure install
+[done] site generique et composer.phar en place
 
 ------------------
 - Tutos & autres -
