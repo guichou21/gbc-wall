@@ -11,16 +11,21 @@ php_intl
 Define the parameters 
 ======================
 #app/config/parameters.yml
-the database accesss
-the webSite name and description
-    webSiteName
-    webSiteDescription
+  the database accesss
+  the webSite name and description
+      webSiteName
+      webSiteDescription
 
+#app/config/config_dev.yml
+  swiftmailer
+  
 #src/gbcreation/HomeBundle/resource/config/parameters.yml
     Home param Bundle
     Contact infos
     rss infos
     external portfolio  url
+
+
 
 Folder Web
 ===========

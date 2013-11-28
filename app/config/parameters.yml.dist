@@ -11,3 +11,6 @@ parameters:
     mailer_password: todo
     locale: fr
     secret: todo
+
+    param_webSiteName: Guillaume.besset
+    param_webSiteDescription: wall Demo
