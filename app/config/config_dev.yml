@@ -30,6 +30,6 @@ assetic:
 #Delivery adress => envoi tous les mails a cette adresse quelque soit l'email du formulaire
 swiftmailer:
     transport: gmail
-    username:  dev.gbe
-    password:  d3vPOINTgb3
-    delivery_address: dev.gbe@gmail.com
+    username:  todo
+    password:  todo
+    delivery_address: todo@todo.fr

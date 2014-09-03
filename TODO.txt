@@ -5,10 +5,11 @@ Firefox : tester responsive : ctrl maj M
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
+<<<<<<< HEAD
 * si pb home lien mettre variable globale ds conf et y accéder
 * Filtre Photo / Vidéo / Année
+=======
 * form contact  prametrer envoi mail
-* Puis supprimer FosUSerBundle et réimporter tout avec composer : http://rkueny.fr/developpement-web/integrer-facilement-facebook-connect-et-twitter-connect-avec-fosuserbundle-pour-symfony-2-1
 * durée session
 * Créer une fenetre de config appli qui ecris un fichier de propriété relatif a l'application contenant. plus un raz par defaut :
    - lien rss vimeo:youtube:wordpress:...
@@ -16,7 +17,10 @@ Firefox : tester responsive : ctrl maj M
    - paramétrage : réseaux sociaux actif ou non (permet le share fb, twitter,..)
    - [RSS]nbItem de rss.twig a récupérer
    - [RSS] Nom blog et infos a récuéprer ou afficher
+   - CF : http://www.squareeyes.fr/actualite/jouer-avec-les-variables-globales-dans-symfony-2
 * Slug
+* utiliser facebook ou twiter connect ; http://rkueny.fr/developpement-web/integrer-facilement-facebook-connect-et-twitter-connect-avec-fosuserbundle-pour-symfony-2-1
+* Filtre Année
 * réecrire et adapter le fichier param.yml http://www.squareeyes.fr/actualite/jouer-avec-les-variables-globales-dans-symfony-2
 * Sonata Admin
 * Mise en place droits admin -> msg d'erreurs a gérer / création compte / profile / + design formulaires
@@ -72,6 +76,7 @@ http://www.symfony2-checklist.com/fr
 [done] mise en place imageLoaded pour reorganiser wall lorsque image chargee
 [done] iframe responsive design https://github.com/jonsuh/Responsive-YouTube-Vimeo-Embed-and-HTML5-Videos-with-CSS
 [done] image existe deja - renommer en mettant un -2 par ex
+[done] Filtre Photo / Vidéo
 [done] readme - procedure install
 [done] site generique et composer.phar en place
 

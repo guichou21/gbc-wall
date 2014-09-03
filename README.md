@@ -1,10 +1,11 @@
-gbc-wall
+README  -  gbc-wall
 ====================
 
-A website to provide a homepage and a wall of item (photos and video)
+A website to provide an homepage and a wall of item (picture and video)
+The readme describe the installation.
 
 Activate php module
-====================
+--------------------
 php_intl
 
 Get Symfony vendors 
@@ -12,49 +13,49 @@ Get Symfony vendors
 php composer.phar install
 
 Define the parameters 
-======================
-#app/config/parameters.yml
-the database accesss
-the webSite name and description
-    webSiteName
-    webSiteDescription
+--------------------
+* `app/config/parameters.yml`
+ * the database accesss
+ * the webSite name and description
+  * webSiteName
+  * webSiteDescription
 
-#src/gbcreation/HomeBundle/resource/config/parameters.yml
-    Home param Bundle
-    Contact infos
-    rss infos
-    external portfolio  url
+* `app/config/config_dev.yml`
+ * swiftmailer
+  
+* `src/gbcreation/HomeBundle/resource/config/parameters.yml`
+ * Home param Bundle
+ * Contact infos
+ * rss infos
+ * external portfolio  url
 
 Folder Web
-===========
-- To save the uploaded picture, create the folder images/wall
-- Change the picture in images/slider
+------------
+* Create folder `images/wall` (used to save the uploaded picture) 
+* Change the picture in `images/slider`  (home slider picture)
 
 WebSite stats (js)
-==================
-#web/resources/js
-Paste google analytics script in: sy2-wall.js
+--------------------
+* `web/resources/js`
+Paste google analytics script in : `sy2-wall.js`
 
 Copy public files from the bundle web/public to web/public
-=======================================================
-php app/console assets:install web --env=prod
-php app/console assets:install web
-
+-----------------------------------------------------------
+    php app/console assets:install web --env=prod
+    php app/console assets:install web
 
 Create user to access admin panel
-===================================
-php app/console fos:user:create testuser test@example.com p@ssword
-php app/console fos:user:activate testuser
-php app/console fos:user:promote testuser ROLE_ADMIN
-
-or create with: --super-admin
-
+---------------------------------
+    php app/console fos:user:create testuser test@example.com p@ssword
+    php app/console fos:user:activate testuser
+    php app/console fos:user:promote testuser ROLE_ADMIN
+    or create with: --super-admin
 
 Admin
-=======
+---------
 Connect with admin/adminpass then create a new admin user and delete this one
 
-
-Put data
-=========
-user sql script and images in zip archive to initiate an example
+Start the example 
+------------------
+Use the sql script to integrate some picture and the admin user.
+Deploy from the zip archive the pictures in the right folder : `images/wall`
