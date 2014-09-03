@@ -5,6 +5,7 @@ Firefox : tester responsive : ctrl maj M
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
+* si pb home lien mettre variable globale ds conf et y accéder
 * Filtre Photo / Vidéo / Année
 * form contact  prametrer envoi mail
 * Puis supprimer FosUSerBundle et réimporter tout avec composer : http://rkueny.fr/developpement-web/integrer-facilement-facebook-connect-et-twitter-connect-avec-fosuserbundle-pour-symfony-2-1

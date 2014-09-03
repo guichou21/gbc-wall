@@ -7,6 +7,9 @@ Activate php module
 ====================
 php_intl
 
+Get Symfony vendors 
+======================
+php composer.phar install
 
 Define the parameters 
 ======================

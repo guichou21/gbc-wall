@@ -22,7 +22,6 @@
     </head>
     <body>
     <!-- /Menu -->
-    {% block menu %}
      <div class="navbar navbar navbar-fixed-top">
           <div class="navbar-inner">
             <div class="container">
@@ -36,7 +35,6 @@
 
               <div class="nav-collapse collapse">
                 <ul class="nav">
-                  <!--<li class="{% if app.request.get('_route') == 'gb_creation_home_homepage' %}active{% endif %}"><a href="{{ path('gb_creation_home_homepage') }}">Accueil</a></li>-->
                   <li class="{% if app.request.get('_route') == 'gb_creation_wall_homepage' %}active{% endif %}"><a href="{{ path('gb_creation_wall_homepage') }}">Wall</a></li>
                   <li class="{% if app.request.get('_route') == 'gb_creation_contact' %}active{% endif %}"><a href="{{ path('gb_creation_contact') }}">Contact</a></li>
 
@@ -60,7 +58,7 @@
             </div>
           </div>
         </div>
-      {% endblock %} 
+
 
         <div class="container-fluid">
 

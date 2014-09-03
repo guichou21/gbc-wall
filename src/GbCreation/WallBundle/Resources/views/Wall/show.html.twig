@@ -45,7 +45,7 @@
       $('.btn-navbar').remove();
       $('.nav-collapse').remove();
 
-      var description = '<a  class="brand" href="{{ path('gb_creation_wall_homepage') }}">Wall</a> <span id="itemDescription">Le <span class="date">{{ item.date|localizeddate("long", "none") }}</span> : &ldquo;<span class="description">{{ item.description }}&rdquo;</span></span>';
+      var description = '<a  class="brand" href="{{ path('gb_creation_wall_homepage') }}">Wall</a> <span id="itemDescription">Le <span class="date">{{ item.date|date("d/m/Y") }}</span> : &ldquo;<span class="description">{{ item.description }}&rdquo;</span></span>';
 
       $('.myBrand').after(description);
   });
