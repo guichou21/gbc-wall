@@ -57,17 +57,19 @@
             var scrollLoadItems = false;
             //Si ipad
             if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i)){
-              if($(window).scrollTop()==$(document).height() - window.innerHeight && load==false ){
+              if($(window).scrollTop()==$(document).height() - window.innerHeight ){
                  scrollLoadItems = true;
               }
+              else{ scrollLoadItems = false; }
             }
             else{
-              if($(window).scrollTop()==$(document).height() - $(window).height() && load==false ){
+              if($(window).scrollTop()==$(document).height() - $(window).height() ){
                  scrollLoadItems = true;
               }
+              else{ scrollLoadItems = false; }
             }
 
-            if(scrollLoadItems){
+            if(scrollLoadItems && load==false ){
                 if(($('.myItem').size()!=$('.nb_item').text())){
                     //On affiche un loader
                     $('.loading').show();
@@ -89,7 +91,6 @@
                            $('.myItem:last').after(data);
                             //On remet la valeur à faux car c'est fini
                             load = false;
-                            scrollLoadItems = false;
                             //on reload les items
                            $container.masonry('reloadItems');
                            //on réaffiche les items
