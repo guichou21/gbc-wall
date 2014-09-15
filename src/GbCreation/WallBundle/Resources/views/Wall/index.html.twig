@@ -53,8 +53,21 @@
 
             /* si aucun chargement n'est en cours, si tout les items ne sont pas affichés, alors on lance la fonction. */
 
-            if($(window).scrollTop()==$(document).height() - $(window).height() && load==false ){
-            /*  if(load==false ){  */
+             //Correction scroll ko sur ipad en landscape
+            var scrollLoadItems = false;
+            //Si ipad
+            if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i)){
+              if($(window).scrollTop()==$(document).height() - window.innerHeight && load==false ){
+                 scrollLoadItems = true;
+              }
+            }
+            else{
+              if($(window).scrollTop()==$(document).height() - $(window).height() && load==false ){
+                 scrollLoadItems = true;
+              }
+            }
+
+            if(scrollLoadItems){
                 if(($('.myItem').size()!=$('.nb_item').text())){
                     //On affiche un loader
                     $('.loading').show();
@@ -76,6 +89,7 @@
                            $('.myItem:last').after(data);
                             //On remet la valeur à faux car c'est fini
                             load = false;
+                            scrollLoadItems = false;
                             //on reload les items
                            $container.masonry('reloadItems');
                            //on réaffiche les items
