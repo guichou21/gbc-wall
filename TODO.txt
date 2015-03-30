@@ -2,6 +2,7 @@ Firefox : tester responsive : ctrl maj M
 -------------------
 - Evols  &   Bugs -
 -------------------
+* Mettre en place ficchier conf   .dev  .prod .exemple   . de meme pour Entity et nom tables pour toProd ?
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
