@@ -64,6 +64,7 @@
 
 #footer { border-top: 1px solid #ccc; clear: both; text-align: center; padding: 10px; color: #aaa; }
 #footer h3 { text-align: center; font-family: 'La Belle Aurore', cursive; font-size: 24px; margin-bottom: 20px; font-weight: normal; color: #266BB2;}
+#footer .version{ margin-left:30px; font-family: 'Irish Grover'; color: #266BB2;}
 
 
 /* Carousel */

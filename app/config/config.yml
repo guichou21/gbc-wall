@@ -27,6 +27,7 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         webSiteName: %param_webSiteName%
+        webSiteVersion: %param_webSiteVersion%
         webSiteDescription: %param_webSiteDescription%
 
 # Assetic Configuration
