@@ -18,6 +18,7 @@ Define the parameters
  * the database accesss
  * the webSite name and description
   * webSiteName
+  * webSiteVersion
   * webSiteDescription
 
 * `app/config/config_dev.yml`
