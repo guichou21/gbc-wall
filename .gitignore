@@ -14,3 +14,7 @@
 ##images propres au site (header, upload, ...)
 web/images/slider/*
 web/images/wall/*
+
+
+#Fichiers mac divers
+*.DS_Store
