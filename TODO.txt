@@ -2,6 +2,11 @@ Firefox : tester responsive : ctrl maj M
 -------------------
 - Evols  &   Bugs -
 -------------------
+*Bloquer les IP Russes !!!  mettre ds htaccess
+Order Allow,Deny
+Allow from all
+Deny from 94.153.
+
 * Mettre en place ficchier conf   .dev  .prod .exemple   . de meme pour Entity et nom tables pour toProd ?
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
