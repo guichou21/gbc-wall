@@ -7,14 +7,24 @@
 /app/config/parameters.yml
 
 
+
+#OVH PROD
+/app/config/parameters.yml.prod
+#au cas ou d'autres
+*.prod
+
+#Test a quoi ca sert ?
+/bin
+
 #### Ma conf
 ##js propre au site (stats google, ...)
 #web/resources/js/sy2-wall.js
+
 
 ##images propres au site (header, upload, ...)
 web/images/slider/*
 web/images/wall/*
 
 
-#Fichiers mac divers
+#Fichiers temp local
 *.DS_Store
