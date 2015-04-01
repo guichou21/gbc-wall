@@ -11,10 +11,8 @@ Deny from 94.153.
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
-<<<<<<< HEAD
 * si pb home lien mettre variable globale ds conf et y accéder
 * Filtre Photo / Vidéo / Année
-=======
 * form contact  prametrer envoi mail
 * durée session
 * Créer une fenetre de config appli qui ecris un fichier de propriété relatif a l'application contenant. plus un raz par defaut :

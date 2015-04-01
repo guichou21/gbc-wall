@@ -1,7 +1,13 @@
 parameters:
+    gbcreation.db.table_prefix: prefix_
 #    gb_creation_user.example.class: GbCreation\UserBundle\Example
 
 services:
+        gbcreation.tblprefix_subscriber:
+            class: GbCreation\Subscriber\TablePrefixSubscriber
+            arguments: [%gbcreation.db.table_prefix%]
+            tags:
+                - { name: doctrine.event_subscriber }
 #    gb_creation_user.example:
 #        class: %gb_creation_user.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

@@ -30,6 +30,12 @@ Define the parameters
  * rss infos
  * external portfolio  url
 
+* `src/gbcreation/WallBundle/resource/config/services.yml`
+ * gbcreation.db.table_prefix: prefix_
+
+* `src/gbcreation/UserBundle/resource/config/services.yml`
+ * gbcreation.db.table_prefix: prefix_
+
 Folder Web
 ------------
 * Create folder `images/wall` (used to save the uploaded picture) 

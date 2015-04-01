@@ -2,7 +2,7 @@ parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
-    database_name: gbc-wall-demo
+    database_name: todo
     database_user: todo
     database_password: todo
     mailer_transport: todo
