@@ -63,6 +63,7 @@ http://www.symfony2-checklist.com/fr
 ------------
 --- Done ---
 ------------
+[done] prefix table entity. used when several site on same host server (prod ovh for instance)
 [done] ajax requete pour afficher photo site
 [done] js scroll infiny rafraichi fenetre !
 [done] NbCom et nb Photos affichées ds entete : Twig : utiliser render au lieu include qui va appele un contoller.
