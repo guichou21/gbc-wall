@@ -1,15 +1,22 @@
+##########################################################
 # Symfony directories
-/web/bundles/
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
 /vendor/
-/app/config/parameters.yml
+
+# bundle générés lors du install web
+/web/bundles/*
+/web/resources/*
 
 
 ########################################################
-#OVH PROD
+# Local Configuration files
+/app/config/parameters.yml
+
+# PROD files
 /app/config/parameters.yml.prod
+
 #Pour les autres (Bundle/Wall et User / config/services.yml)
 *.prod
 
@@ -17,6 +24,7 @@
 #web/resources/js/sy2-wall.js
 
 
+########################################################
 ##images propres au site (header, upload, ...)
 web/images/slider/*
 web/images/wall/*
@@ -27,7 +35,8 @@ web/images/wall/*
 *.DS_Store
 
 
-######################### Local dev     #Lorsque push depuis workspace Replicat PROD commenter tout ce qu'il y a dessous
+######################### Local dev  ######################### 
+                        #Lorsque push depuis workspace "Replicat PROD" penser à commenter tout ce qu'il y a dessous
 
 #/src/GbCreation/UserBundle/Resources/config/services.yml
 #/src/GbCreation/WallBundle/Resources/config/services.yml
@@ -37,5 +46,3 @@ web/images/wall/*
 
 #Test a quoi ca sert ???????????????
 /bin
-
-#Difference toProd local : _demo dans les 3 tables entity : wall et user 

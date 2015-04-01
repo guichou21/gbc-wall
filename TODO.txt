@@ -8,6 +8,7 @@ Allow from all
 Deny from 94.153.
 
 * Mettre en place ficchier conf   .dev  .prod .exemple   . de meme pour Entity et nom tables pour toProd ?
+* Readme : procédure install à terminer (générer base, ) !!!
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....
 * faire tourner sur travis! pour voir
 ------------------------------------------------------------------------
@@ -64,6 +65,7 @@ http://www.symfony2-checklist.com/fr
 --- Done ---
 ------------
 [done] prefix table entity. used when several site on same host server (prod ovh for instance)
+[done] meme nom image, ajout suffix
 [done] ajax requete pour afficher photo site
 [done] js scroll infiny rafraichi fenetre !
 [done] NbCom et nb Photos affichées ds entete : Twig : utiliser render au lieu include qui va appele un contoller.
