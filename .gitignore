@@ -26,9 +26,13 @@ web/images/wall/*
 #Fichiers temp local
 *.DS_Store
 
-#Local dev
+
+######################### Local dev     #Lorsque push depuis workspace Replicat PROD commenter tout ce qu'il y a dessous
+
 #/src/GbCreation/UserBundle/Resources/config/services.yml
 #/src/GbCreation/WallBundle/Resources/config/services.yml
+
+######################### Local dev
 
 
 #Test a quoi ca sert ???????????????
