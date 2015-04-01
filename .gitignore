@@ -13,9 +13,6 @@
 #au cas ou d'autres
 *.prod
 
-#Test a quoi ca sert ?
-/bin
-
 #### Ma conf
 ##js propre au site (stats google, ...)
 #web/resources/js/sy2-wall.js
@@ -28,3 +25,9 @@ web/images/wall/*
 
 #Fichiers temp local
 *.DS_Store
+
+
+#Test a quoi ca sert ???????????????
+/bin
+
+#Difference toProd local : _demo dans les 3 tables entity : wall et user 
