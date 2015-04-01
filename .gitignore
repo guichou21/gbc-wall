@@ -27,8 +27,8 @@ web/images/wall/*
 *.DS_Store
 
 #Local dev
-/src/GbCreation/UserBundle/Resources/config/services.yml
-/src/GbCreation/WallBundle/Resources/config/services.yml
+#/src/GbCreation/UserBundle/Resources/config/services.yml
+#/src/GbCreation/WallBundle/Resources/config/services.yml
 
 
 #Test a quoi ca sert ???????????????

@@ -1,5 +1,5 @@
 parameters:
-    gbcreation.db.table_prefix: demo_
+    gbcreation.db.table_prefix: prefix_
 #    gb_creation_wall.example.class: GbCreation\WallBundle\Example
 
 
