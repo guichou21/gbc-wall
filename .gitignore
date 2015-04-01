@@ -7,13 +7,12 @@
 /app/config/parameters.yml
 
 
-
+########################################################
 #OVH PROD
 /app/config/parameters.yml.prod
-#au cas ou d'autres
+#Pour les autres (Bundle/Wall et User / config/services.yml)
 *.prod
 
-#### Ma conf
 ##js propre au site (stats google, ...)
 #web/resources/js/sy2-wall.js
 
@@ -23,8 +22,13 @@ web/images/slider/*
 web/images/wall/*
 
 
+########################################################
 #Fichiers temp local
 *.DS_Store
+
+#Local dev
+/src/GbCreation/UserBundle/Resources/config/services.yml
+/src/GbCreation/WallBundle/Resources/config/services.yml
 
 
 #Test a quoi ca sert ???????????????
