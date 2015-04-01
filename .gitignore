@@ -33,7 +33,7 @@ web/images/wall/*
 ########################################################
 #Fichiers temp local
 *.DS_Store
-
+.DS_Store
 
 ######################### Local dev  ######################### 
                         #Lorsque push depuis workspace "Replicat PROD" penser à commenter tout ce qu'il y a dessous
