@@ -1,0 +1,22 @@
+parameters:
+    gbcreation.db.table_prefix: prefix_
+#    gb_creation_wall.example.class: GbCreation\WallBundle\Example
+
+
+services:
+#    gb_creation_wall.example:
+#        class: %gb_creation_wall.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    gb_creation_wall.antispam:
+        class: GbCreation\WallBundle\Antispam\GbcAntispam
+        arguments: [3]
+
+    gbcreation.tblprefix_subscriber:
+        class: GbCreation\Subscriber\TablePrefixSubscriber
+        arguments: [%gbcreation.db.table_prefix%]
+        tags:
+            - { name: doctrine.event_subscriber }
+
+#    gb_creation_wall.picture_uploader:
+#        class: GbCreation\WallBundle\Uploader\GbcUploader
+#        arguments: [%gb_creation_wall.picture_directory%]
