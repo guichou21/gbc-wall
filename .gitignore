@@ -13,6 +13,9 @@
 ########################################################
 # Local Configuration files
 /app/config/parameters.yml
+/src/GbCreation/HomeBundle/Resources/config/parameters.yml
+/src/GbCreation/UserBundle/Resources/config/services.yml
+/src/GbCreation/WallBundle/Resources/config/services.yml
 
 # PROD files
 /app/config/parameters.yml.prod

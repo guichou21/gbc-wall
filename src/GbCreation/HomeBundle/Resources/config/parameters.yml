@@ -4,12 +4,12 @@ parameters:
         MAX_COMMENT: 10
         MAX_ITEM: 10
     Contact:
-        EMAIL_WEBSITE_CONTACT: contactMe@gmail.com
+        EMAIL_WEBSITE_CONTACT: karen.guillaume.b@gmail.com
     rssFeeds:
         RSS_VIDEO_NB_ITEM: 10
-        RSS_VIDEO_FEED: 'http://vimeo.com/USerName/videos/rss'
+        RSS_VIDEO_FEED: 'http://vimeo.com/user3746792/videos/rss'
         RSS_BLOG_NB_ITEM: 10
-        RSS_BLOG_FEED: 'http://userName.wordpress.com/feed/'
+        RSS_BLOG_FEED: 'http://guichou21.wordpress.com/feed/'
     urls:
-        EXTERNAL_BLOG: 'http://www.userName.wordpress.com'
+        EXTERNAL_BLOG: 'http://guichou21.wordpress.com'
         SHARE_DATA: 'http://monSiteDePartage.fr'
