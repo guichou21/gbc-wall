@@ -7,6 +7,13 @@ Order Allow,Deny
 Allow from all
 Deny from 94.153.
 
+
+composer update a tt installé. install rien fait ?= différende ?
+
+composer.json : j'ai remplacé :   console marche tjrs ?
+-        "winzou/console-bundle": "dev-master"
++        "coresphere/console-bundle": "dev-master"
+
 * Mettre en place ficchier conf   .dev  .prod .exemple   . de meme pour Entity et nom tables pour toProd ?
 * Readme : procédure install à terminer (générer base, ) !!!
 * Gerer les exceptions (exemple mettre 3 mail ds contact-> detecte spam)  - ereur 500....

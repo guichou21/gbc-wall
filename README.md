@@ -30,6 +30,7 @@ Define the parameters
  * rss infos
  * external portfolio  url
 
+If needed : add prefix to table (DO not forget to modify sql script.....)
 * `src/gbcreation/WallBundle/resource/config/services.yml`
  * gbcreation.db.table_prefix: prefix_
 
