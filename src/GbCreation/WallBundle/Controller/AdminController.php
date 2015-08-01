@@ -530,4 +530,67 @@ class AdminController extends Controller
             ));
     }
 
+
+    public function getImagesPathForEdit()
+    {
+        // the absolute directory path where uploaded documents should be saved
+        return __DIR__ . '/../../../../web/images/wall/';
+    }
+
+    public function editItemRotateAction($rotate,$id)
+    {
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+          throw new AccessDeniedHttpException('Accès limité aux Admins');
+        }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entity = $entityManager->getRepository("GbCreationWallBundle:Item")->find($id);
+        
+        //recuperation des noms des images
+        $imageName = $this->getImagesPathForEdit().$entity->getFile();
+        $thumbImageName = $this->getImagesPathForEdit().'m_'.$entity->getFile();
+
+        //Creation des images
+        $imageSource = imagecreatefromjpeg($imageName);
+        $thumbSource = imagecreatefromjpeg($thumbImageName);
+
+        //Creation des images avec la rotation
+        if($rotate == 'left'){
+            $imageR = imagerotate($imageSource,90,0);
+            $thumbR = imagerotate($thumbSource,90,0);
+        }
+        else if ($rotate == 'right'){
+            $imageR = imagerotate($imageSource,-90,0);
+            $thumbR = imagerotate($thumbSource,-90,0);
+        }
+
+
+        //sauvegarde
+        imagejpeg($imageR,$imageName);
+        imagejpeg($thumbR,$thumbImageName);
+
+        //Mise a jour images en base (ratio)
+        $temp = $entity->getRatio();
+        $entity->setRatio($entity->getReverseRatio());
+        $entity->setReverseRatio($temp);
+
+        $entityManager->persist($entity);
+        $entityManager->flush();
+
+
+
+        //liberation espace memoire
+        imagedestroy($imageSource);
+        imagedestroy($thumbSource);
+
+        imagedestroy($imageR);
+        imagedestroy($thumbR);       
+     
+ 
+        // Puis on redirige sur la page   
+        return $this->redirect($this->generateUrl('gb_creation_admin_item_edit', array('id' => $id)));    
+
+      
+    }
+
 }

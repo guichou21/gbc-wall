@@ -28,6 +28,11 @@
           {{ form_widget(form.file,{ 'attr': {'class': 'hidden'} }) }}
       </div>
 
+      <div class="rotate-button">
+        <a href="{{ path('gb_creation_admin_item_edit_rotate', { 'id': item_id, 'rotate': 'right'  }) }}" ><img src="{{ asset('bundles/gbcreationwall/images/rotateRight.png') }}"></a>
+        <a href="{{ path('gb_creation_admin_item_edit_rotate', { 'id': item_id, 'rotate': 'left' }) }}" ><img src="{{ asset('bundles/gbcreationwall/images/rotateLeft.png') }}"></a>
+      </div>
+
     	{{ form_rest(form) }}
         <button class="btn btn-primary" type="submit">Modifier</button>
         <a href="{{ path('gb_creation_admin_items_show') }}" class="btn btn-primary">Annuler</a>

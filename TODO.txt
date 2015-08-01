@@ -7,6 +7,7 @@ Order Allow,Deny
 Allow from all
 Deny from 94.153.
 
+* voir la height-width lors import avec exif_read_data (car tjrs meme height et width, seul orientation change) et rotate si besoin....
 
 composer update a tt installé. install rien fait ?= différende ?
 
@@ -71,6 +72,7 @@ http://www.symfony2-checklist.com/fr
 ------------
 --- Done ---
 ------------
+[done] Pivoter images verticales
 [done] prefix table entity. used when several site on same host server (prod ovh for instance)
 [done] meme nom image, ajout suffix
 [done] ajax requete pour afficher photo site
