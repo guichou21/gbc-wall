@@ -1,5 +1,5 @@
 parameters:
-    gbcreation.db.table_prefix: 
+    gbcreation.db.table_prefix: kg_
 #    gb_creation_user.example.class: GbCreation\UserBundle\Example
 
 services:

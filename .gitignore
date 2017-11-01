@@ -9,8 +9,20 @@
 /web/bundles/*
 /web/resources/*
 
+robots.txt
 
-########################################################
+########################################################   CONF
+#### General Conf   (On ne garde que les .dist)
+/app/config/config_dev.yml
+/app/config/config_dev.yml.local
+/app/config/config_dev.yml.prod
+
+/app/config/parameters.yml
+/app/config/parameters.yml.prod
+/app/config/parameters.yml.local
+
+
+#### Bundles
 # Local Configuration files
 /app/config/parameters.yml
 /src/GbCreation/HomeBundle/Resources/config/parameters.yml
@@ -20,12 +32,17 @@
 # PROD files
 /app/config/parameters.yml.prod
 
+
 #Pour les autres (Bundle/Wall et User / config/services.yml)
 *.prod
 
 ##js propre au site (stats google, ...)
 #web/resources/js/sy2-wall.js
+web/resources/js/sy2-wall.js.prod
 
+
+## Au cas ou... tous les fichiers de prod
+*.yml.prod
 
 ########################################################
 ##images propres au site (header, upload, ...)

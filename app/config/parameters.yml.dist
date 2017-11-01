@@ -13,5 +13,5 @@ parameters:
     secret: todo
 
     param_webSiteName: Guillaume.besset
-    param_webSiteVersion: V 1.1
+    param_webSiteVersion: V 2.0
     param_webSiteDescription: wall Demo
